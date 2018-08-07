@@ -1,0 +1,167 @@
+.c-header {
+  position: relative;
+  z-index: 1000;
+  min-height: 46px;
+  background: #ededed;
+  border-bottom: 1px solid #d9dee4;
+
+  &__title {
+    display: block;
+    float: left;
+    width: 50px;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+    background: #2a3f54;
+
+    @media (min-width: 768px) {
+      width: 230px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__site-name {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  &__sidebar-toggle {
+    margin: 0 15px;
+    color: #5a738e;
+    font-size: 26px;
+  }
+
+  &__nav-item {
+    height: 100%;
+  }
+
+  &__nav-link {
+    height: 100%;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      color: #23527c;
+      background: #d9dee4;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    font-size: 15px;
+
+    &--caret {
+      font-size: 18px;
+      line-height: 19px;
+    }
+  }
+
+  &__alert {
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    padding: 2px 6px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 13px;
+  }
+
+  &__profile-photo {
+    width: 29px;
+    margin-right: 10px;
+  }
+
+  &__dropdown-arrow {
+    margin-left: 5px;
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+.c-notification {
+  top: 1px !important;
+  width: 180px;
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 12px;
+  border-top: 0;
+  border-radius: 0 0 0.25em 0.25em;
+
+  &__item {
+    padding: 10px;
+  }
+
+  &--messages {
+    width: 280px;
+
+    .c-notification {
+      &__items {
+        max-height: 200px;
+        overflow: auto;
+      }
+
+      &__item {
+        position: relative;
+        border-bottom: 1px solid #e9ecef;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &--toolbar {
+          padding: 7px 10px;
+          border-top: 1px solid #e9ecef;
+          border-bottom: 0;
+        }
+      }
+
+      &__time {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: #90949c;
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__image {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  &__title {
+    display: block;
+    max-width: 145px;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__message {
+    display: block;
+    max-width: 208px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__divider {
+    margin: 0;
+  }
+}
