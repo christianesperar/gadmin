@@ -1,0 +1,20 @@
+.c-container {
+  min-height: 100%;
+  background: #f7f7f7;
+
+  @media (min-width: 768px) {
+    margin-left: 230px;
+  }
+
+  &--collapse {
+    transform: translate(50px, 0);
+
+    @media (min-width: 768px) {
+      position: static;
+      left: auto;
+      width: auto;
+      margin-left: 50px;
+      transform: none;
+    }
+  }
+}

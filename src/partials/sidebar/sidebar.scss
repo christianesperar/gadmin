@@ -1,0 +1,294 @@
+.c-sidebar {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  display: none;
+  width: 230px;
+  min-height: 100%;
+  padding: 50px 0 35px;
+  color: #fff;
+  background: #2a3f54;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  &__profile {
+    padding: 10px;
+
+    &-photo {
+      width: 56px;
+      margin-right: 10px;
+    }
+
+    &-message {
+      display: block;
+      color: #bab8b8;
+      font-size: 13px;
+    }
+
+    &-name {
+      color: #ecf0f1;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    width: 230px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #172d44;
+
+    &-list {
+      float: left;
+      width: 25%;
+      text-align: center;
+    }
+
+    &-link {
+      display: block;
+      padding: 5px 0;
+      color: #5a738e;
+      font-size: 17px;
+
+      &:hover {
+        color: #fff;
+        background: #425567;
+      }
+    }
+  }
+
+  &__menu {
+    &-title {
+      display: block;
+      padding: 7px 10px 7px;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px #000;
+    }
+
+    &-item {
+      margin-top: 1px;
+    }
+
+    &-link {
+      position: relative;
+      display: block;
+      margin-bottom: 1px;
+      padding: 12px 15px;
+      color: #e7e7e7;
+      cursor: pointer;
+
+      &:hover {
+        color: #f2f5f7;
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 18px;
+      right: 15px;
+      color: #c4cfda;
+      font-size: 10px;
+
+      &--up {
+        transform: rotate(180deg);
+      }
+    }
+
+    // First Level Menu
+    &-list {
+      margin-bottom: 10px;
+      padding: 0;
+      color: #e7e7e7;
+      font-weight: 500;
+      list-style: none;
+
+      .c-sidebar__menu-list {
+        display: none;
+        margin: 0;
+
+        .c-sidebar__menu {
+          &-item {
+            margin: 0;
+          }
+
+          &-link {
+            margin-bottom: 0;
+            padding: 6px 15px 6px 45px;
+            color: #cacfd4;
+            font-size: 12px;
+
+            &:hover {
+              color: #f2f5f7;
+            }
+          }
+
+          &-arrow {
+            top: 10px;
+          }
+
+          // Second Level Menu
+          &-list {
+            .c-sidebar__menu-link {
+              padding-left: 60px;
+            }
+          }
+        }
+      }
+    }
+
+    &-icon {
+      width: 26px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    // Active and Selected state
+    > .c-sidebar__menu-list > .c-sidebar__menu-item {
+      &--active,
+      &--selected {
+        color: #f2f5f7;
+        background-color: #324558;
+
+        > .c-sidebar__menu-link {
+          color: #f2f5f7;
+          text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
+          background: linear-gradient(#334556, #2c4257), #2a3f54;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
+        }
+
+        .c-sidebar__menu-link:hover {
+          background-color: #3d4f62;
+        }
+
+        .c-sidebar__menu-list > .c-sidebar__menu-item--active > .c-sidebar__menu-link {
+          color: #f2f5f7;
+          background-color: #3d4f62;
+        }
+      }
+
+      &--selected {
+        border-left: 5px solid #1abb9c;
+
+        .c-sidebar__menu-link {
+          padding-left: 40px;
+        }
+
+        > .c-sidebar__menu-link {
+          padding-left: 10px;
+        }
+
+        > .c-sidebar__menu-list {
+          display: block;
+
+          > .c-sidebar__menu-item--selected {
+            > .c-sidebar__menu-list {
+              display: block;
+            }
+          }
+        }
+
+        .c-sidebar__menu-list .c-sidebar__menu-list .c-sidebar__menu-link {
+          padding-left: 65px;
+        }
+      }
+    }
+  }
+
+  &__tooltip {
+    font-size: 12px;
+  }
+
+  // Collapse
+  &--collapse {
+    display: block;
+    width: 50px;
+
+    .c-sidebar {
+      &__site-name,
+      &__details,
+      &__menu-title,
+      &__menu-description {
+        display: none;
+      }
+
+      &__title {
+        text-align: center;
+      }
+
+      &__footer {
+        display: none;
+        width: 50px;
+      }
+    }
+
+    .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item {
+      position: relative;
+
+      > .c-sidebar__menu-link .c-sidebar__menu-arrow {
+        display: none;
+      }
+
+      > .c-sidebar__menu-list {
+        display: none !important;
+
+        .c-sidebar__menu-link {
+          padding-left: 15px;
+        }
+
+        .c-sidebar__menu-list {
+          .c-sidebar__menu-link {
+            padding-left: 30px;
+          }
+        }
+      }
+
+      &:hover {
+        background: linear-gradient(#334556, #2c4257), #2a3f54;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
+
+        .c-sidebar__menu-description {
+          width: 180px;
+          padding: 13px 15px;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 50px;
+          border-top-right-radius: 0.25em;
+          border-bottom-right-radius: 0.25em;
+          background: #2a3f54;
+          background: linear-gradient(#334556, #2c4257), #2a3f54;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
+          z-index: 1000;
+        }
+
+        > .c-sidebar__menu-list {
+          width: 180px;
+          padding-top: 3px;
+          display: block !important;
+          position: absolute;
+          top: 43px;
+          left: 50px;
+          background: #324558;
+          border-bottom-right-radius: 0.25em;
+        }
+      }
+
+      &--selected {
+        &:hover {
+          .c-sidebar__menu-description,
+          > .c-sidebar__menu-list {
+            left: 45px;
+          }
+        }
+      }
+    }
+  }
+}

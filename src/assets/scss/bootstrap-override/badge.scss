@@ -1,0 +1,33 @@
+.badge {
+  &-primary {
+    background-color: #286090;
+  }
+
+  // &-secondary {
+  //   background-color: #???;
+  // }
+
+  &-success {
+    background-color: #26b99a;
+  }
+
+  &-danger {
+    background-color: #e74c3c;
+  }
+
+  &-warning {
+    background-color: #ec971f;
+  }
+
+  &-info {
+    background-color: #5bc0de;
+  }
+
+  // &-light {
+  //   background-color: #???;
+  // }
+
+  &-dark {
+    background-color: #394d5f;
+  }
+}
