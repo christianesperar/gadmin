@@ -1,7 +1,9 @@
+@import "../../assets/scss/variables.scss";
+
 .c-header {
   position: relative;
   z-index: 1000;
-  min-height: 46px;
+  height: $header-height;
   background: #ededed;
   border-bottom: 1px solid #d9dee4;
 
@@ -9,10 +11,9 @@
     display: block;
     float: left;
     width: 50px;
-    padding: 6px 10px;
+    height: $header-height;
     color: #fff;
-    font-size: 23px;
-    text-align: center;
+    font-size: 2rem;
     background: #2a3f54;
 
     @media (min-width: 768px) {
@@ -35,7 +36,7 @@
   &__sidebar-toggle {
     margin: 0 15px;
     color: #5a738e;
-    font-size: 26px;
+    font-size: 2rem;
   }
 
   &__nav-item {
@@ -47,7 +48,7 @@
 
     &:hover,
     &[aria-expanded="true"] {
-      color: #23527c;
+      color: #23527c !important;
       background: #d9dee4;
     }
 
@@ -96,7 +97,6 @@
   margin-top: 0;
   padding: 0;
   overflow: hidden;
-  font-size: 12px;
   border-top: 0;
   border-radius: 0 0 0.25em 0.25em;
 
@@ -133,7 +133,7 @@
         top: 10px;
         right: 15px;
         color: #90949c;
-        font-size: 10px;
+        font-size: 80%;
       }
     }
   }
@@ -148,7 +148,6 @@
     max-width: 145px;
     overflow: hidden;
     font-weight: 500;
-    font-size: 12px;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
