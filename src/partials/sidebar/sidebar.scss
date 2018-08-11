@@ -1,3 +1,5 @@
+@import "../../assets/scss/variables.scss";
+
 .c-sidebar {
   position: absolute;
   top: 0;
@@ -24,7 +26,6 @@
     &-message {
       display: block;
       color: #bab8b8;
-      font-size: 13px;
     }
 
     &-name {
@@ -53,7 +54,7 @@
       display: block;
       padding: 5px 0;
       color: #5a738e;
-      font-size: 17px;
+      font-size: $sidebar-icon-size;
 
       &:hover {
         color: #fff;
@@ -146,7 +147,8 @@
 
     &-icon {
       width: 26px;
-      font-size: 18px;
+      font-size: $sidebar-icon-size;
+      font-style: normal;
       text-align: center;
     }
 
@@ -202,10 +204,6 @@
     }
   }
 
-  &__tooltip {
-    font-size: 12px;
-  }
-
   // Collapse
   &--collapse {
     display: block;
@@ -255,27 +253,27 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
 
         .c-sidebar__menu-description {
-          width: 180px;
-          padding: 13px 15px;
-          display: block;
           position: absolute;
           top: 0;
           left: 50px;
-          border-top-right-radius: 0.25em;
-          border-bottom-right-radius: 0.25em;
+          z-index: 1000;
+          display: block;
+          width: 180px;
+          padding: 13px 15px;
           background: #2a3f54;
           background: linear-gradient(#334556, #2c4257), #2a3f54;
+          border-top-right-radius: 0.25em;
+          border-bottom-right-radius: 0.25em;
           box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
-          z-index: 1000;
         }
 
         > .c-sidebar__menu-list {
-          width: 180px;
-          padding-top: 3px;
-          display: block !important;
           position: absolute;
           top: 43px;
           left: 50px;
+          display: block !important;
+          width: 180px;
+          padding-top: 3px;
           background: #324558;
           border-bottom-right-radius: 0.25em;
         }

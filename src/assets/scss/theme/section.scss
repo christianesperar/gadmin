@@ -19,6 +19,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 16px;
+  }
+
+  &__link {
+    &:hover,
+    &[aria-expanded="true"] {
+      color: #23527c !important;
+    }
   }
 }
