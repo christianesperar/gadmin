@@ -1,0 +1,192 @@
+@@include('./../partials/header/header.html')
+@@include('./../partials/sidebar/sidebar.html')
+
+<div class="c-container">
+  <main class="c-main e--toc container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="c-main__header">
+          <h1 class="c-main__title">Buttons</h1>
+          <span class="c-main__subtitle">Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="examples">Examples</h2>
+          </div>
+
+          <div class="c-section__content">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-link">Link</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="button-tags">Button tags</h2>
+          </div>
+
+          <div class="c-section__content">
+            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <button class="btn btn-primary" type="submit">Button</button>
+            <input class="btn btn-primary" type="button" value="Input">
+            <input class="btn btn-primary" type="submit" value="Submit">
+            <input class="btn btn-primary" type="reset" value="Reset">
+          </div>
+        </section>
+      </div>
+      
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="outline-buttons">Outline buttons</h2>
+          </div>
+
+          <div class="c-section__content">
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="button" class="btn btn-outline-success">Success</button>
+            <button type="button" class="btn btn-outline-danger">Danger</button>
+            <button type="button" class="btn btn-outline-warning">Warning</button>
+            <button type="button" class="btn btn-outline-info">Info</button>
+            <button type="button" class="btn btn-outline-light">Light</button>
+            <button type="button" class="btn btn-outline-dark">Dark</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="sizes-layout">Sizes and layout</h2>
+          </div>
+
+          <div class="c-section__content">
+            <p>
+              <button type="button" class="btn btn-primary btn-lg">Large button</button>
+              <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+            </p>
+
+            <p>
+              <button type="button" class="btn btn-primary btn-sm">Small button</button>
+              <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+            </p>
+
+            <p>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+            </p>
+          </div>
+        </section>
+      </div>
+      
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="active-states">Active States</h2>
+          </div>
+          
+          <div class="c-section__content">
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+          </div>
+        </section>
+      </div>
+      
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="disabled-states">Disabled States</h2>
+          </div>
+          
+          <div class="c-section__content">
+            <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+            <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+          </div>
+        </section>
+      </div>
+      
+      <div class="col-12">
+        <section class="c-section">
+          <div class="c-section__header">
+            <h2 class="c-section__title" id="checkbox-radio-buttons">Checkbox and radio buttons</h2>
+          </div>
+          
+          <div class="c-section__content">
+            <p>
+              <div class="btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="checkbox" checked autocomplete="off"> Unchecked
+                </label>
+                
+                <label class="btn btn-secondary active">
+                  <input type="checkbox" checked autocomplete="off"> Checked
+                </label>
+              </div>
+            </p>
+
+            <p>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                </label>
+              </div>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="e-toc">
+    <a class="btn btn-outline-success btn-block"
+        href="https://getbootstrap.com/docs/4.1/components/buttons/"
+        target="_blank">
+        View documentation
+    </a>
+
+    <ul class="e-toc__items">
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#examples">Examples</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#button-tags">Button tags</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#outline-buttons">Outline buttons</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#sizes-layout">Sizes and layout</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#active-states">Active States</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#disabled-states">Disabled States</a>
+      </li>
+      <li class="e-toc__item">
+        <a class="e-toc__link" href="#checkbox-radio-buttons">Checkbox and radio buttons</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+@@include('./../partials/footer/footer.html')
