@@ -1,6 +1,15 @@
 .c-main {
   padding: 15px;
 
+  &__header {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0;
+  }
+
   &__subtitle {
     font-weight: normal;
     font-size: 1rem;

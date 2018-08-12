@@ -1,4 +1,14 @@
+@import "../../assets/scss/variables.scss";
+
 .c-footer {
   padding: 15px;
   background: #fff;
+
+  @media (min-width: 768px) {
+    margin-left: $sidebar-desktop-width;
+  }
+
+  &--collapse {
+    margin-left: $sidebar-mobile-width;
+  }
 }

@@ -5,7 +5,7 @@
   top: 0;
   z-index: 999;
   display: none;
-  width: 230px;
+  width: $sidebar-desktop-width;
   min-height: 100%;
   padding: 50px 0 35px;
   color: #fff;
@@ -38,7 +38,7 @@
   &__footer {
     position: fixed;
     bottom: 0;
-    width: 230px;
+    width: $sidebar-desktop-width;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -207,7 +207,7 @@
   // Collapse
   &--collapse {
     display: block;
-    width: 50px;
+    width: $sidebar-mobile-width;
 
     .c-sidebar {
       &__site-name,

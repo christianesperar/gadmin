@@ -1,0 +1,51 @@
+@import "variables.scss";
+
+.e {
+  &-site-one {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &-bootstrap-logo {
+    &-b {
+      position: relative;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    &-4 {
+      position: absolute;
+      top: 0;
+      font-size: 9px;
+    }
+  }
+
+  &--toc {
+    @media (min-width: 992px) {
+      padding-right: 180px;
+    }
+  }
+
+  &-toc {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    display: none;
+    width: 180px;
+    padding: 15px;
+
+    @media (min-width: 992px) {
+      display: block;
+    }
+
+    &__items {
+      display: block;
+      padding: 15px 0;
+      list-style: none;
+    }
+
+    &__link {
+      display: block;
+      padding: 2px 0;
+    }
+  }
+}

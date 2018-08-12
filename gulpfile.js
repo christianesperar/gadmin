@@ -32,13 +32,16 @@ const compileSASS = (directories, filename, outputStyle = 'nested') =>
 gulp.task('sass', () => {
   const path = {
     bootstrap: 'src/assets/scss/bootstrap/*.scss',
-    theme: 'src/**/*.scss',
+    theme: ['src/assets/scss/theme/*.scss', 'src/partials/**/*.scss'],
+    excludable: 'src/assets/scss/excludable.scss',
   };
 
-  compileSASS(['src/**/*.scss', `!${path.bootstrap}`], 'custom.css');
+  compileSASS(path.theme, 'theme.css');
   compileSASS(path.bootstrap, 'bootstrap.css');
-  compileSASS(['src/**/*.scss', `!${path.bootstrap}`], 'custom.min.css', 'compressed');
+  compileSASS(path.excludable, 'excludable.css');
+  compileSASS(path.theme, 'theme.min.css', 'compressed');
   compileSASS(path.bootstrap, 'bootstrap.min.css', 'compressed');
+  compileSASS(path.excludable, 'excludable.min.css', 'compressed');
 });
 
 gulp.task('scripts', () =>
@@ -59,7 +62,8 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', [
-  'watch',
+  'build',
   'sass',
   'scripts',
+  'watch',
 ]);

@@ -25,10 +25,12 @@
   var $CONTAINER = $('.c-container');
   var $SIDEBAR = $('.c-sidebar');
   var $SIDEBAR_TOGGLE = $('.c-header__sidebar-toggle');
+  var $FOOTER = $('.c-footer');
 
   $SIDEBAR_TOGGLE.on('click', function () {
     $SIDEBAR.toggleClass('c-sidebar--collapse');
     $CONTAINER.toggleClass('c-container--collapse');
+    $FOOTER.toggleClass('c-footer--collapse');
 
     window.ClnHelper.resizeContent();
   });
