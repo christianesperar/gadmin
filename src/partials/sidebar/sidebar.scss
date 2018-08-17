@@ -76,6 +76,10 @@
 
     &-item {
       margin-top: 1px;
+
+      &--active > .c-sidebar__menu-link .c-sidebar__menu-arrow {
+        transform: rotate(180deg);
+      }
     }
 
     &-link {
@@ -97,10 +101,6 @@
       right: 15px;
       color: #c4cfda;
       font-size: 10px;
-
-      &--up {
-        transform: rotate(180deg);
-      }
     }
 
     // First Level Menu
@@ -173,7 +173,7 @@
         .c-sidebar__menu-list > .c-sidebar__menu-item--active > .c-sidebar__menu-link {
           color: #f2f5f7;
           background-color: #3d4f62;
-        }
+        }        
       }
 
       &--selected {
