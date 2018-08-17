@@ -17,7 +17,7 @@
 
 .e-toc {
   position: fixed;
-  top: 42px;
+  top: 0;
   right: 0;
   display: none;
   width: 180px;
@@ -26,6 +26,9 @@
 @media (min-width: 992px) {
   .e-toc {
     display: block; } }
+
+.e-toc__header {
+  margin-bottom: 15px; }
 
 .e-toc__items {
   display: block;

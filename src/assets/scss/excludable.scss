@@ -27,7 +27,7 @@
 
   &-toc {
     position: fixed;
-    top: $header-height;
+    top: 0;
     right: 0;
     display: none;
     width: 180px;
@@ -35,6 +35,10 @@
 
     @media (min-width: 992px) {
       display: block;
+    }
+
+    &__header {
+      margin-bottom: 15px;
     }
 
     &__items {

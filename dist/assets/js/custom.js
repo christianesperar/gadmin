@@ -40,9 +40,15 @@
 (function ($) {
   var $SIDEBAR = $('.c-sidebar');
   var $MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu-item');
+  var $MENU_LINK = $SIDEBAR.find('.c-sidebar__menu-link');
   var $PARENT_MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item');
 
   window.ClnHelper.resizeContent();
+
+  // Search for the current link and add active and selected class to parent menu item
+  $MENU_LINK.filter(function (index, element) {
+    return element.href === window.location.href.split('#')[0].split('?')[0];
+  }).parents(':eq(2), :eq(4)').addClass('c-sidebar__menu-item--active c-sidebar__menu-item--selected');
 
   $MENU_ITEM.on('click', function (e) {
     var $element = $(e.currentTarget);
@@ -53,7 +59,6 @@
       return;
     }
 
-    var $arrow = $element.find('.c-sidebar__menu-arrow').first();
     var isParentMenuItem = $element.parents(':eq(1)').hasClass('c-sidebar__menu');
 
     if ($submenu.is(':visible')) {
@@ -62,10 +67,8 @@
       if (isSidebarCollapse && isParentMenuItem) return;
 
       $element.removeClass('c-sidebar__menu-item--active');
-      $arrow.removeClass('c-sidebar__menu-arrow--up');
 
       $element.find('.c-sidebar__menu-list').slideUp();
-      $element.find('.c-sidebar__menu-arrow').removeClass('c-sidebar__menu-arrow--up');
 
       $submenu.slideUp(function () {
         window.ClnHelper.resizeContent();
@@ -76,7 +79,6 @@
       }
 
       $element.addClass('c-sidebar__menu-item--active');
-      $arrow.addClass('c-sidebar__menu-arrow--up');
 
       $submenu.slideDown(function () {
         window.ClnHelper.resizeContent();
@@ -93,17 +95,14 @@
     if (!$SIDEBAR.hasClass('c-sidebar--collapse') || $element.hasClass('c-sidebar__menu-item--active')) return;
 
     var $submenu = $element.children('.c-sidebar__menu-list');
-    var $arrow = $element.find('.c-sidebar__menu-arrow').first();
     var $SIDEBAR_MENU_ITEM_ACTIVE = $SIDEBAR.find('.c-sidebar__menu-item--active');
 
     $SIDEBAR_MENU_ITEM_ACTIVE.removeClass('c-sidebar__menu-item--active');
-    $SIDEBAR_MENU_ITEM_ACTIVE.find('.c-sidebar__menu-arrow').removeClass('c-sidebar__menu-arrow--up');
     $SIDEBAR_MENU_ITEM_ACTIVE.find('.c-sidebar__menu-list').css('display', 'none');
 
     $element.addClass('c-sidebar__menu-item--active');
 
     if ($submenu.length) {
-      $arrow.addClass('c-sidebar__menu-arrow--up');
       $submenu.css('display', 'block');
     }
   });
