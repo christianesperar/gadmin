@@ -4,71 +4,100 @@
   const $MENU_LINK = $SIDEBAR.find('.c-sidebar__menu-link');
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item');
 
-  window.ClnHelper.resizeContent();
+  const isSidebarCollapse = () => $SIDEBAR.hasClass('c-sidebar--collapse');
+  const resizeContent = () => window.ClnHelper.resizeContent();
 
-  // Search for the current link and add active and selected class to parent menu item
+  /**
+   * Search for the current link and add `active` and `selected` class to parent menu item
+   * Please note that this is ideally handle by server side rendering
+   */
   $MENU_LINK
     .filter((index, element) => element.href === window.location.href.split('#')[0].split('?')[0])
-    .parents(':eq(2), :eq(4)').addClass('c-sidebar__menu-item--active c-sidebar__menu-item--selected');
+    .parents('.c-sidebar__menu-item:eq(1), .c-sidebar__menu-item:eq(2)')
+    .addClass('c-sidebar__menu-item--active c-sidebar__menu-item--selected');
+
+  // Add arrow if multilevel menu
+  $MENU_ITEM.has('.c-sidebar__menu-list').addClass('c-sidebar__menu-item--arrow');
 
   $MENU_ITEM.on('click', (e) => {
+    e.stopPropagation();
+
     const $element = $(e.currentTarget);
     const $submenu = $element.children('.c-sidebar__menu-list');
 
-    if (!$submenu.length) {
-      e.stopPropagation();
-      return;
-    }
+    if (!$submenu.length) return;
 
     const isParentMenuItem = $element.parents(':eq(1)').hasClass('c-sidebar__menu');
 
     if ($submenu.is(':visible')) {
-      const isSidebarCollapse = $SIDEBAR.hasClass('c-sidebar--collapse');
-
-      if (isSidebarCollapse && isParentMenuItem) return;
+      if (isSidebarCollapse() && isParentMenuItem) return;
 
       $element.removeClass('c-sidebar__menu-item--active');
 
-      $element.find('.c-sidebar__menu-list').slideUp();
+      $element.children('.c-sidebar__menu-list').slideUp();
 
-      $submenu.slideUp(() => {
-        window.ClnHelper.resizeContent();
-      });
+      $submenu.slideUp(resizeContent);
     } else {
-      if (isParentMenuItem) {
+      if (!isSidebarCollapse() && isParentMenuItem) {
         $MENU_ITEM.removeClass('c-sidebar__menu-item--active');
+        $MENU_ITEM.children('.c-sidebar__menu-list').slideUp(resizeContent);
       }
 
       $element.addClass('c-sidebar__menu-item--active');
 
-      $submenu.slideDown(() => {
-        window.ClnHelper.resizeContent();
-      });
+      if (!isSidebarCollapse() || !isParentMenuItem) {
+        $submenu.slideDown(resizeContent);
+      }
     }
+  });
 
+  /**
+   * Collapse and mobile
+   * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
+   * are both triggered on mobile
+   */
+  let bubbling;
+
+  $PARENT_MENU_ITEM.on('mouseenter click', (e) => {
     e.stopPropagation();
+
+    if (!isSidebarCollapse()) return;
+
+    clearTimeout(bubbling);
+
+    bubbling = setTimeout(() => {
+      const $element = $(e.currentTarget);
+
+      if ($element.hasClass('c-sidebar__menu-item--toggle')) {
+        $element.removeClass('c-sidebar__menu-item--toggle');
+      } else {
+        const $submenu = $element.children('.c-sidebar__menu-list');
+        const $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.c-sidebar__menu-item--active').not($element);
+
+        if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
+          $MENU_ITEM.removeClass('c-sidebar__menu-item--active  c-sidebar__menu-item--toggle');
+          $MENU_ITEM.children('.c-sidebar__menu-list').css('display', 'none');
+        }
+
+        $element.addClass('c-sidebar__menu-item--active c-sidebar__menu-item--toggle');
+
+        if ($submenu.length) {
+          $submenu.css('display', 'block');
+        }
+      }
+    });
   });
 
-  // Collapse
-  $PARENT_MENU_ITEM.on('mouseenter', (e) => {
-    const $element = $(e.currentTarget);
+  $PARENT_MENU_ITEM.on('mouseleave', (e) => {
+    if (!isSidebarCollapse()) return;
 
-    if (!$SIDEBAR.hasClass('c-sidebar--collapse') || $element.hasClass('c-sidebar__menu-item--active')) return;
-
-    const $submenu = $element.children('.c-sidebar__menu-list');
-    const $SIDEBAR_MENU_ITEM_ACTIVE = $SIDEBAR.find('.c-sidebar__menu-item--active');
-
-    $SIDEBAR_MENU_ITEM_ACTIVE.removeClass('c-sidebar__menu-item--active');
-    $SIDEBAR_MENU_ITEM_ACTIVE.find('.c-sidebar__menu-list').css('display', 'none');
-
-    $element.addClass('c-sidebar__menu-item--active');
-
-    if ($submenu.length) {
-      $submenu.css('display', 'block');
-    }
+    $(e.currentTarget).removeClass('c-sidebar__menu-item--toggle');
   });
 
-  $(window).resize(() => {
-    window.ClnHelper.resizeContent();
-  });
+  /**
+   * Resize content on load and when resizing window
+   */
+  resizeContent();
+
+  $(window).resize(resizeContent);
 })(jQuery)
