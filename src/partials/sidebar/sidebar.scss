@@ -75,15 +75,26 @@
     }
 
     &-item {
+      position: relative;
       margin-top: 1px;
 
-      &--active > .c-sidebar__menu-link .c-sidebar__menu-arrow {
-        transform: rotate(180deg);
+      &--arrow::after {
+        position: absolute;
+        top: 16px;
+        right: 15px;
+        content: "\f078";
+        color: #c4cfda;
+        font-weight: 900;
+        font-size: 10px;
+        font-family: "Font Awesome 5 Free";
+      }
+
+      &--active.c-sidebar__menu-item--arrow::after {
+        content: "\f077";
       }
     }
 
     &-link {
-      position: relative;
       display: block;
       margin-bottom: 1px;
       padding: 12px 15px;
@@ -93,14 +104,6 @@
       &:hover {
         color: #f2f5f7;
       }
-    }
-
-    &-arrow {
-      position: absolute;
-      top: 18px;
-      right: 15px;
-      color: #c4cfda;
-      font-size: 10px;
     }
 
     // First Level Menu
@@ -118,6 +121,10 @@
         .c-sidebar__menu {
           &-item {
             margin: 0;
+
+            &--arrow::after {
+              top: 8px;
+            }
           }
 
           &-link {
@@ -129,10 +136,6 @@
             &:hover {
               color: #f2f5f7;
             }
-          }
-
-          &-arrow {
-            top: 10px;
           }
 
           // Second Level Menu
@@ -173,7 +176,7 @@
         .c-sidebar__menu-list > .c-sidebar__menu-item--active > .c-sidebar__menu-link {
           color: #f2f5f7;
           background-color: #3d4f62;
-        }        
+        }
       }
 
       &--selected {
@@ -228,9 +231,7 @@
     }
 
     .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item {
-      position: relative;
-
-      > .c-sidebar__menu-link .c-sidebar__menu-arrow {
+      &.c-sidebar__menu-item--arrow::after {
         display: none;
       }
 
@@ -248,7 +249,7 @@
         }
       }
 
-      &:hover {
+      &--toggle {
         background: linear-gradient(#334556, #2c4257), #2a3f54;
         box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
 
@@ -279,12 +280,10 @@
         }
       }
 
-      &--selected {
-        &:hover {
-          .c-sidebar__menu-description,
-          > .c-sidebar__menu-list {
-            left: 45px;
-          }
+      &--selected.c-sidebar__menu-item--toggle {
+        .c-sidebar__menu-description,
+        > .c-sidebar__menu-list {
+          left: 45px;
         }
       }
     }
