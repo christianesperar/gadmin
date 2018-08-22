@@ -135,13 +135,20 @@
       <span class="c-sidebar__menu-title">General</span>
       <ul class="c-sidebar__menu-list">
         <li class="c-sidebar__menu-item">
-          <a class="c-sidebar__menu-link c-sidebar__menu-link">
+          <a class="c-sidebar__menu-link" href="index.html">
+            <i class="c-sidebar__menu-icon fas fa-home"></i>
+            <span class="c-sidebar__menu-description">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="c-sidebar__menu-item">
+          <a class="c-sidebar__menu-link">
             <i class="c-sidebar__menu-icon fas fa-file"></i>
             <span class="c-sidebar__menu-description">Pages</span>
           </a>
           <ul class="c-sidebar__menu-list">
             <li class="c-sidebar__menu-item">
-              <a class="c-sidebar__menu-link" href="index.html">
+              <a class="c-sidebar__menu-link" href="pages-blank.html">
               Blank
             </a>
             </li>
@@ -257,38 +264,58 @@
     <main class="c-main container-fluid">
       <div class="row">
         <div class="col-12">
-          <h1>Blank <span class="c-main__subtitle">nice and clean</span></h1>
+          <h1>Dashboard</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title">Title</h2>
-
-              <div class="c-section__toolbar">
-                <div class="dropdown">
-                  <a class="c-section__link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-h"></i>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#">Setting 1</a>
-                      <a class="dropdown-item" href="#">Setting 2</a>
-                      <div class="c-notification__divider dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Setting 3</a>
-                    </div>
-                  </a>
-                </div>
-              </div>
+          <div class="btn-toolbar d-flex justify-content-end">
+            <div class="btn-group mr-2">
+              <button class="btn btn-sm btn-outline-secondary">Share</button>
+              <button class="btn btn-sm btn-outline-secondary">Export</button>
             </div>
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              This week
+            </button>
+          </div>
 
-            <div class="c-section__content">
-              Content
-            </div>
-          </section>
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
         </div>
       </div>
     </main>
   </div>
+
+  <!-- Graphs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        datasets: [{
+          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+          lineTension: 0,
+          backgroundColor: 'transparent',
+          borderColor: '#26b99a',
+          borderWidth: 4,
+          pointBackgroundColor: '#26b99a'
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            }
+          }]
+        },
+        legend: {
+          display: false,
+        }
+      }
+    });
+  </script>
 
   <footer class="c-footer text-right">
     Cl<span class="e-site-one">one</span> - Free Bootstrap 4 Admin Template
