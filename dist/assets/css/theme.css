@@ -74,6 +74,17 @@ a:hover {
 .c-section__link:hover, .c-section__link[aria-expanded="true"] {
   color: #23527c !important; }
 
+.c-footer {
+  padding: 15px;
+  background: #fff; }
+
+@media (min-width: 768px) {
+  .c-footer {
+    margin-left: 230px; } }
+
+.c-footer--collapse {
+  margin-left: 50px; }
+
 .c-header {
   position: relative;
   z-index: 1000;
@@ -434,14 +445,3 @@ a:hover {
 .c-sidebar--collapse .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item--selected.c-sidebar__menu-item--toggle .c-sidebar__menu-description,
 .c-sidebar--collapse .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item--selected.c-sidebar__menu-item--toggle > .c-sidebar__menu-list {
   left: 45px; }
-
-.c-footer {
-  padding: 15px;
-  background: #fff; }
-
-@media (min-width: 768px) {
-  .c-footer {
-    margin-left: 230px; } }
-
-.c-footer--collapse {
-  margin-left: 50px; }

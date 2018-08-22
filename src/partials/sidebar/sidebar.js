@@ -13,7 +13,7 @@
    */
   $MENU_LINK
     .filter((index, element) => element.href === window.location.href.split('#')[0].split('?')[0])
-    .parents('.c-sidebar__menu-item:eq(1), .c-sidebar__menu-item:eq(2)')
+    .parents('.c-sidebar__menu-item:eq(0), .c-sidebar__menu-item:eq(1), .c-sidebar__menu-item:eq(2)')
     .addClass('c-sidebar__menu-item--active c-sidebar__menu-item--selected');
 
   // Add arrow if multilevel menu
@@ -85,7 +85,7 @@
           $submenu.css('display', 'block');
         }
       }
-    });
+    }, 200);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', (e) => {
