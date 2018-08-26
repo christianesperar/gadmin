@@ -459,8 +459,8 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -482,8 +482,8 @@ pre code {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -493,8 +493,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -7.5px;
+  margin-left: -7.5px; }
 
 .no-gutters {
   margin-right: 0;
@@ -514,8 +514,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 7.5px;
+  padding-left: 7.5px; }
 
 .col {
   -ms-flex-preferred-size: 0;
@@ -3971,7 +3971,7 @@ input[type="button"].btn-block {
   flex-direction: column; }
 
 .card-deck .card {
-  margin-bottom: 15px; }
+  margin-bottom: 7.5px; }
 
 @media (min-width: 576px) {
   .card-deck {
@@ -3979,8 +3979,8 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    margin-right: -15px;
-    margin-left: -15px; }
+    margin-right: -7.5px;
+    margin-left: -7.5px; }
   .card-deck .card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3992,9 +3992,9 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-right: 15px;
+    margin-right: 7.5px;
     margin-bottom: 0;
-    margin-left: 15px; } }
+    margin-left: 7.5px; } }
 
 .card-group {
   display: -webkit-box;
@@ -4006,7 +4006,7 @@ input[type="button"].btn-block {
   flex-direction: column; }
 
 .card-group > .card {
-  margin-bottom: 15px; }
+  margin-bottom: 7.5px; }
 
 @media (min-width: 576px) {
   .card-group {
