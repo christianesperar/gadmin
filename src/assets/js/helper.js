@@ -10,5 +10,7 @@
 
       $MAIN.css('min-height', height);
     },
+
+    isTouchScreen: 'ontouchstart' in document.documentElement,
   };
 })(jQuery)
