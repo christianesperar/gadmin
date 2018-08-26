@@ -3,6 +3,14 @@
   const $MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu-item');
   const $MENU_LINK = $SIDEBAR.find('.c-sidebar__menu-link');
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item');
+  const ms = window.ClnHelper.isTouchScreen ? 200 : 0;
+
+  /**
+  * Collapse and mobile
+  * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
+  * are both triggered on mobile
+  */
+  let bubbling;
 
   const isSidebarCollapse = () => $SIDEBAR.hasClass('c-sidebar--collapse');
   const resizeContent = () => window.ClnHelper.resizeContent();
@@ -19,48 +27,44 @@
   // Add arrow if multilevel menu
   $MENU_ITEM.has('.c-sidebar__menu-list').addClass('c-sidebar__menu-item--arrow');
 
-  $MENU_ITEM.on('click', (e) => {
+  $MENU_ITEM.on('click touchstart', (e) => {
     e.stopPropagation();
 
-    const $element = $(e.currentTarget);
-    const $submenu = $element.children('.c-sidebar__menu-list');
+    clearTimeout(bubbling);
 
-    if (!$submenu.length) return;
+    bubbling = setTimeout(() => {
+      const $element = $(e.currentTarget);
+      const $submenu = $element.children('.c-sidebar__menu-list');
 
-    const isParentMenuItem = $element.parents(':eq(1)').hasClass('c-sidebar__menu');
+      if (!$submenu.length) return;
 
-    if ($submenu.is(':visible')) {
-      if (isSidebarCollapse() && isParentMenuItem) return;
+      const isParentMenuItem = $element.parents(':eq(1)').hasClass('c-sidebar__menu');
 
-      $element.removeClass('c-sidebar__menu-item--active');
+      if ($submenu.is(':visible')) {
+        if (isSidebarCollapse() && isParentMenuItem) return;
 
-      $element.children('.c-sidebar__menu-list').slideUp();
+        $element.removeClass('c-sidebar__menu-item--active');
 
-      $submenu.slideUp(resizeContent);
-    } else {
-      if (!isSidebarCollapse() && isParentMenuItem) {
-        $MENU_ITEM.removeClass('c-sidebar__menu-item--active');
-        $MENU_ITEM.children('.c-sidebar__menu-list').slideUp(resizeContent);
+        $element.children('.c-sidebar__menu-list').slideUp();
+
+        $submenu.slideUp(resizeContent);
+      } else {
+        if (!isSidebarCollapse() && isParentMenuItem) {
+          $MENU_ITEM.removeClass('c-sidebar__menu-item--active');
+          $MENU_ITEM.children('.c-sidebar__menu-list').slideUp(resizeContent);
+        }
+
+        $element.addClass('c-sidebar__menu-item--active');
+
+        if (!isSidebarCollapse() || !isParentMenuItem) {
+          $submenu.slideDown(resizeContent);
+        }
       }
-
-      $element.addClass('c-sidebar__menu-item--active');
-
-      if (!isSidebarCollapse() || !isParentMenuItem) {
-        $submenu.slideDown(resizeContent);
-      }
-    }
+    }, ms);
   });
 
-  /**
-   * Collapse and mobile
-   * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
-   * are both triggered on mobile
-   */
-  let bubbling;
-
-  $PARENT_MENU_ITEM.on('mouseenter click', (e) => {
+  $PARENT_MENU_ITEM.on('mouseenter click touchstart', (e) => {
     e.stopPropagation();
-
     if (!isSidebarCollapse()) return;
 
     clearTimeout(bubbling);
@@ -85,13 +89,19 @@
           $submenu.css('display', 'block');
         }
       }
-    }, 200);
+    }, ms);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', (e) => {
     if (!isSidebarCollapse()) return;
 
     $(e.currentTarget).removeClass('c-sidebar__menu-item--toggle');
+  });
+
+  $(window).on('touchstart', () => {
+    if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
+
+    $MENU_ITEM.filter('.c-sidebar__menu-item--toggle').removeClass('c-sidebar__menu-item--toggle');
   });
 
   /**
