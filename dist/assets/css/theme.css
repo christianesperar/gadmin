@@ -1,3 +1,10 @@
+.c-activity__item {
+  padding-bottom: 10px; }
+
+.c-activity__time {
+  color: #90949c;
+  font-size: 80%; }
+
 .c-container {
   min-height: 100%;
   background: #f7f7f7; }
@@ -73,6 +80,50 @@ a:hover {
 
 .c-section__link:hover, .c-section__link[aria-expanded="true"] {
   color: #23527c !important; }
+
+.c-status-box {
+  position: relative;
+  min-height: 108px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #e6e9ed;
+  border-radius: 0.25em; }
+
+.c-status-box__content {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px; }
+
+.c-status-box__icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #e6e9ed;
+  font-size: 36px; }
+
+.c-status-box__label {
+  font-weight: 700; }
+
+.c-status-box__value {
+  display: block;
+  color: #5a738e;
+  font-size: 32px; }
+
+.c-status-box__change {
+  font-weight: 700; }
+
+.c-status-box__change--up {
+  color: #26b99a; }
+
+.c-status-box__change--down {
+  color: #d9534f; }
+
+.c-status-box__graph {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.25; }
 
 .c-footer {
   padding: 15px;
