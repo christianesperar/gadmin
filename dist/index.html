@@ -260,7 +260,7 @@
   </nav>
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.4/jquery-jvectormap.min.css">
 
   <div class="c-container">
     <main class="c-main container-fluid">
@@ -471,12 +471,12 @@
 
 
   <!-- Chart.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.2/dist/Chart.min.js"></script>
 
   <!-- jVectorMap -->
-  <script src="http://jvectormap.com/js/jquery-jvectormap-2.0.3.min.js"></script>
-  <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
-  <script src="http://jvectormap.com/js/gdp-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.4/jquery-jvectormap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.4/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="https://rawgit.com/bjornd/jvectormap-site/master/content/js/gdp-data.js"></script>
 
   <!-- 3rd party scripts implementation -->
   <script>
@@ -536,7 +536,7 @@
       $('#location-map').vectorMap({
         backgroundColor: 'transparent',
         zoomOnScroll: false,
-        map: 'world_mill',
+        map: 'world_mill_en',
         series: {
           regions: [{
             values: gdpData,
