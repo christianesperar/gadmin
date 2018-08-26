@@ -5,5 +5,7 @@ $info: #31b0d5;
 $warning: #f0ad4e;
 $danger: #d9534f;
 
+$grid-gutter-width: 15px !default;
+
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
 @import "dropdown-menu";
