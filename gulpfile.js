@@ -32,7 +32,11 @@ const compileSASS = (directories, filename, outputStyle = 'nested') =>
 gulp.task('sass', () => {
   const path = {
     bootstrap: 'src/assets/scss/bootstrap/*.scss',
-    theme: ['src/assets/scss/theme/*.scss', 'src/partials/**/*.scss'],
+    theme: [
+      'src/assets/scss/theme/*.scss',
+      'src/partials/**/*.scss',
+      'src/assets/scss/libraries/*.scss',
+    ],
     excludable: 'src/assets/scss/excludable.scss',
   };
 

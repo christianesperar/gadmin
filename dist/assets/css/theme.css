@@ -496,3 +496,11 @@ a:hover {
 .c-sidebar--collapse .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item--selected.c-sidebar__menu-item--toggle .c-sidebar__menu-description,
 .c-sidebar--collapse .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item--selected.c-sidebar__menu-item--toggle > .c-sidebar__menu-list {
   left: 45px; }
+
+.jvectormap--zoom-bottom .jvectormap-zoomin {
+  top: inherit;
+  bottom: 30px; }
+
+.jvectormap--zoom-bottom .jvectormap-zoomout {
+  top: inherit;
+  bottom: 10px; }

@@ -1,0 +1,15 @@
+.jvectormap {
+  &--zoom-bottom {
+    .jvectormap {
+      &-zoomin {
+        top: inherit;
+        bottom: 30px;
+      }
+
+      &-zoomout {
+        top: inherit;
+        bottom: 10px;
+      }
+    }
+  }
+}
