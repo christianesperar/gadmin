@@ -1,4 +1,5 @@
 @import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
 
 .c-sidebar {
   position: absolute;
@@ -82,11 +83,10 @@
         position: absolute;
         top: 16px;
         right: 15px;
-        content: "\f078";
         color: #c4cfda;
-        font-weight: 900;
         font-size: 10px;
-        font-family: "Font Awesome 5 Free";
+
+        @include font-awesome("\f078");
       }
 
       &--active.c-sidebar__menu-item--arrow::after {

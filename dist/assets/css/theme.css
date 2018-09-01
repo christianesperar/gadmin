@@ -5,6 +5,24 @@
   color: #90949c;
   font-size: 80%; }
 
+@charset "UTF-8";
+.c-list {
+  position: relative;
+  display: block;
+  padding-left: 14px; }
+
+.c-list__bullet {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  font-size: 60%; }
+
+.c-list__bullet::before {
+  content: "";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal; }
+
 .c-container {
   min-height: 100%;
   background: #f7f7f7; }
@@ -98,7 +116,7 @@ a:hover {
 
 .c-status-box__icon {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 15px;
   color: #e6e9ed;
   font-size: 36px; }
@@ -106,10 +124,17 @@ a:hover {
 .c-status-box__label {
   font-weight: 700; }
 
+.c-status-box__select {
+  width: auto; }
+
+.c-status-box__body {
+  padding: 10px 0; }
+
 .c-status-box__value {
   display: block;
   color: #5a738e;
-  font-size: 32px; }
+  font-size: 32px;
+  line-height: 32px; }
 
 .c-status-box__change {
   font-weight: 700; }
@@ -123,6 +148,14 @@ a:hover {
 .c-status-box__graph {
   position: absolute;
   bottom: 0;
+  opacity: 0.25; }
+
+.c-status-box__donut {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  width: 60px;
+  height: 60px;
   opacity: 0.25; }
 
 .c-footer {
@@ -272,6 +305,7 @@ a:hover {
 .c-notification__divider {
   margin: 0; }
 
+@charset "UTF-8";
 .c-sidebar {
   position: absolute;
   top: 0;
@@ -344,11 +378,12 @@ a:hover {
   position: absolute;
   top: 16px;
   right: 15px;
-  content: "\f078";
   color: #c4cfda;
-  font-weight: 900;
   font-size: 10px;
-  font-family: "Font Awesome 5 Free"; }
+  content: "";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal; }
 
 .c-sidebar__menu-item--active.c-sidebar__menu-item--arrow::after {
   content: "\f077"; }

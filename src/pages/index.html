@@ -10,12 +10,18 @@
         <div class="c-status-box">
           <i class="c-status-box__icon fas fa-dollar-sign"></i>
           <div class="c-status-box__content">
-            <span class="c-status-box__label">Sales</span>
-            <span class="c-status-box__value">1234.50</span>
-            <span class="c-status-box__change c-status-box__change--up">
-              <i class="fas fa-caret-up"></i> 5%
-            </span>
-            from last week
+            <div class="c-status-box__header">
+              <span class="c-status-box__label">Sales</span>
+            </div>
+            <div class="c-status-box__body">
+              <span class="c-status-box__value">1234.50</span>
+            </div>
+            <div class="c-status-box__footer">
+              <span class="c-status-box__change c-status-box__change--up">
+                <i class="fas fa-caret-up"></i> 5%
+              </span>
+              from last week
+            </div>
           </div>
         </div>
       </div>
@@ -23,39 +29,57 @@
         <div class="c-status-box">
           <i class="c-status-box__icon fas fa-inbox"></i>
           <div class="c-status-box__content">
-            <span class="c-status-box__label">Orders</span>
-            <span class="c-status-box__value">67</span>
-            <span class="c-status-box__change c-status-box__change--down">
-              <i class="fas fa-caret-down"></i> 1%
-            </span>
-            from last week
+            <div class="c-status-box__header">
+              <span class="c-status-box__label">Orders</span>
+            </div>
+            <div class="c-status-box__body">
+              <span class="c-status-box__value">67</span>
+            </div>
+            <div class="c-status-box__footer">
+              <span class="c-status-box__change c-status-box__change--down">
+                <i class="fas fa-caret-down"></i> 1%
+              </span>
+              from last week
+            </div>
           </div>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="c-status-box">
-          <i class="c-status-box__icon far fa-eye"></i>
           <div class="c-status-box__content">
-            <span class="c-status-box__label">Sessions</span>
-            <span class="c-status-box__value">8910</span>
-            <span class="c-status-box__change c-status-box__change--up">
-              <i class="fas fa-caret-up"></i> 8%
-            </span>
-            from last week
+            <div class="c-status-box__header">
+              <span class="c-status-box__label">Sessions</span>
+              <select class="c-status-box__select custom-select custom-select-sm float-right">
+                <option>30 Days</option>
+                <option>15 Days</option>
+                <option>7 Days</option>
+              </select>
+            </div>
+            <div class="c-status-box__body">
+              <span class="c-status-box__value">8910</span>
+            </div>
           </div>
-          <canvas id="session-chart" class="c-status-box__graph" height="80px"></canvas>
+          <canvas id="session-chart" class="c-status-box__graph" height="50px"></canvas>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="c-status-box">
-          <i class="c-status-box__icon far fa-envelope"></i>
           <div class="c-status-box__content">
-            <span class="c-status-box__label">Inquiries</span>
-            <span class="c-status-box__value">11</span>
-            <span class="c-status-box__change c-status-box__change--up">
-              <i class="fas fa-caret-up"></i> 4%
-            </span>
-            from last week
+            <div class="c-status-box__header">
+              <span class="c-status-box__label">Inquiries</span>
+              <span class="float-right">(11 Total)</span>
+            </div>
+            <div class="c-status-box__body">
+              <span class="c-list">
+                <i class="c-list__bullet text-success"></i> Verified (9 - 82%)
+              </span>
+              <span class="c-list">
+                <i class="c-list__bullet text-warning"></i> Spam (2 - 18%)
+              </span>
+            </div>
+            <div class="c-status-box__donut">
+              <canvas id="inquiries-chart"  height="60px" width="60px"/>
+            </div>
           </div>
         </div>
       </div>
@@ -122,31 +146,46 @@
                       <tbody>
                         <tr>
                           <td>
-                            <i class="fas fa-circle text-primary"></i> Desktop
+                            <span class="c-list">
+                              <i class="c-list__bullet text-primary"></i>
+                               Desktop
+                            </span>
                           </td>
                           <td>28%</td>
                         </tr>
                         <tr>
                           <td>
-                            <i class="fas fa-circle text-success"></i> Laptop
+                            <span class="c-list">
+                              <i class="c-list__bullet text-success"></i>
+                               Laptop
+                            </span>
                           </td>
                           <td>23%</td>
                         </tr>
                         <tr>
                           <td>
-                            <i class="fas fa-circle text-danger"></i> Smartphone
+                            <span class="c-list">
+                              <i class="c-list__bullet text-danger"></i>
+                              Smartphone
+                            </span>
                           </td>
                           <td>27%</td>
                         </tr>
                         <tr>
                           <td>
-                            <i class="fas fa-circle text-warning"></i> Tablet
+                            <span class="c-list">
+                              <i class="c-list__bullet text-warning"></i>
+                               Tablet
+                            </span>
                           </td>
                           <td>19%</td>
                         </tr>
                         <tr>
                           <td>
-                            <i class="fas fa-circle text-dark"></i> Other
+                            <span class="c-list">
+                              <i class="c-list__bullet text-dark"></i>
+                               Other
+                            </span>
                           </td>
                           <td>3%</td>
                         </tr>
@@ -214,8 +253,8 @@
 <script>
   $(function() {
     // Sessions
-    var ctx = document.getElementById('session-chart');
-    var myChart = new Chart(ctx, {
+    var sessionChart = document.getElementById('session-chart');
+    new Chart(sessionChart, {
       type: 'line',
       data: {
         labels: [
@@ -264,6 +303,44 @@
       }
     });
     
+    // Device Usage
+    var inquiriesChart = document.getElementById('inquiries-chart').getContext('2d');
+    new Chart(inquiriesChart, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [
+            9,
+            2
+          ],
+          backgroundColor: [
+            '#26b99a',
+            '#f0ad4e'
+          ]
+        }],
+        labels: [
+          'Verified',
+          'Spam'
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        animation: {
+          animateScale: false,
+          animateRotate: false
+        },
+        tooltips: {
+          enabled: false
+        },
+        hover: {
+          mode: null
+        }
+      }
+    });
+
     // Location
     $('#location-map').vectorMap({
       backgroundColor: 'transparent',
@@ -293,8 +370,8 @@
     });
     
     // Device Usage
-    var deviceUsage = document.getElementById('device-chart').getContext('2d');
-    window.myDoughnut = new Chart(deviceUsage, {
+    var deviceChart = document.getElementById('device-chart').getContext('2d');
+    new Chart(deviceChart, {
       type: 'doughnut',
       data: {
         datasets: [{
