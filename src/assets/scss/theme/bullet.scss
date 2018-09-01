@@ -1,0 +1,18 @@
+@import "../mixins.scss";
+
+.c-list {
+  position: relative;
+  display: block;
+  padding-left: 14px;
+
+  &__bullet {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 60%;
+
+    &::before {
+      @include font-awesome("\f111");
+    }
+  }
+}
