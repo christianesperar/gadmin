@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const merge = require('merge-stream');
 const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -8,7 +9,7 @@ const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const prettify = require('gulp-html-prettify');
 
-gulp.task('build', () => {
+gulp.task('build', () =>
   gulp.src([
     'src/pages/*.html',
     'src/pages/**/*.html',
@@ -18,8 +19,7 @@ gulp.task('build', () => {
   })).pipe(prettify({
     indent_char: ' ',
     indent_size: 2,
-  })).pipe(gulp.dest('dist'));
-});
+  })).pipe(gulp.dest('dist')));
 
 const compileSASS = (directories, filename, outputStyle = 'nested') =>
   gulp.src(directories)
@@ -40,12 +40,14 @@ gulp.task('sass', () => {
     excludable: 'src/assets/scss/excludable.scss',
   };
 
-  compileSASS(path.theme, 'theme.css');
-  compileSASS(path.bootstrap, 'bootstrap.css');
-  compileSASS(path.excludable, 'excludable.css');
-  compileSASS(path.theme, 'theme.min.css', 'compressed');
-  compileSASS(path.bootstrap, 'bootstrap.min.css', 'compressed');
-  compileSASS(path.excludable, 'excludable.min.css', 'compressed');
+  return merge(
+    compileSASS(path.theme, 'theme.css'),
+    compileSASS(path.bootstrap, 'bootstrap.css'),
+    compileSASS(path.excludable, 'excludable.css'),
+    compileSASS(path.theme, 'theme.min.css', 'compressed'),
+    compileSASS(path.bootstrap, 'bootstrap.min.css', 'compressed'),
+    compileSASS(path.excludable, 'excludable.min.css', 'compressed'),
+  );
 });
 
 gulp.task('scripts', () =>
@@ -60,14 +62,14 @@ gulp.task('scripts', () =>
     .pipe(gulp.dest('dist/assets/js')));
 
 gulp.task('watch', () => {
-  gulp.watch('src/**/*.html', ['build']);
-  gulp.watch('src/**/*.scss', ['sass']);
-  gulp.watch('src/**/*.js', ['scripts']);
+  gulp.watch('src/**/*.html', gulp.series('build'));
+  gulp.watch('src/**/*.scss', gulp.series('sass'));
+  gulp.watch('src/**/*.js', gulp.series('scripts'));
 });
 
-gulp.task('default', [
+gulp.task('default', gulp.parallel(
   'build',
   'sass',
   'scripts',
   'watch',
-]);
+));
