@@ -1,10 +1,18 @@
 {
-  "extends": "airbnb",
+  "plugins": [
+    "cypress"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "no-console": 0
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "mocha": true,
+    "cypress/globals": true
   }
 }

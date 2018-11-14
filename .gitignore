@@ -2,3 +2,5 @@
 node_modules
 .sass-cache
 package-lock.json
+cypress/videos
+cypress/screenshots
