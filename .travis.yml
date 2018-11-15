@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 10
+cache: 
+  npm: true
+  directories:
+    - ~/.cache
+install:
+  - npm install -g gulp-cli
+  - npm install http-server -g
+  - npm ci
+script:
+  - gulp && http-server ./dist -a localhost -p 8080 && $(npm bin)/cypress run --record
+  
