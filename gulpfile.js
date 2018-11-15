@@ -67,6 +67,12 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.js', gulp.series('scripts'));
 });
 
+gulp.task('ci', gulp.parallel(
+  'build',
+  'sass',
+  'scripts',
+));
+
 gulp.task('default', gulp.parallel(
   'build',
   'sass',
