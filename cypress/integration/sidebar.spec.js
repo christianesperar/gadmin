@@ -45,6 +45,11 @@ describe('Sidebar Expand', () => {
       .get('.c-sidebar__menu-item:contains(Level Two)')
       .should('be.visible');
   });
+
+  it('should have sidebar footer', () => {
+    cy.get('.c-sidebar__footer')
+      .should('be.visible');
+  });
 });
 
 describe('Sidebar Collapse', () => {
@@ -82,5 +87,10 @@ describe('Sidebar Collapse', () => {
 
     cy.get('.c-sidebar__menu-description:contains(Multilevel Menu)')
       .should('be.visible');
+  });
+
+  it('should not have sidebar footer', () => {
+    cy.get('.c-sidebar__footer')
+      .should('not.be.visible');
   });
 });
