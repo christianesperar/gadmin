@@ -31,14 +31,10 @@
     right: 0;
     display: none;
     width: 180px;
-    padding: 15px;
+    padding: 57px 15px 15px 15px;
 
     @media (min-width: 992px) {
       display: block;
-    }
-
-    &__header {
-      margin-bottom: 15px;
     }
 
     &__items {

@@ -21,14 +21,11 @@
   right: 0;
   display: none;
   width: 180px;
-  padding: 15px; }
+  padding: 57px 15px 15px 15px; }
 
 @media (min-width: 992px) {
   .e-toc {
     display: block; } }
-
-.e-toc__header {
-  margin-bottom: 15px; }
 
 .e-toc__items {
   display: block;
