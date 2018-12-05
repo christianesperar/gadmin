@@ -1,569 +1,576 @@
-@@include('./../partials/header/header.html')
-@@include('./../partials/sidebar/sidebar.html')
+<!doctype html>
+<html lang="en">
 
-<div class="c-container">
-  <main class="c-main e--toc container-fluid" data-spy="scroll" data-target="#navbar-example3">
-    <div class="row">
-      <div class="col-12">
-        <div class="c-main__header">
-          <h1 class="c-main__title">Bootstrap 4 Components</h1>
-          <span class="c-main__subtitle">Over a dozen reusable components</span>
+@@include('./../partials/head.html')
+
+<body>
+  @@include('./../partials/navigation/navigation.html')
+
+  <div class="g-container">
+    <main class="g-main e--toc container-fluid" data-spy="scroll" data-target="#navbar-example3">
+      <div class="row">
+        <div class="col-12">
+          <div class="g-main__header">
+            <h1 class="g-main__title">Bootstrap 4 Components</h1>
+            <span class="g-main__subtitle">Over a dozen reusable components</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="alerts">Alerts</h2>
+      <div class="row">
+        <div class="col-12">
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="alerts">Alerts</h2>
 
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/alerts"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Alerts</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div class="alert alert-primary" role="alert">
-              This is a primary alert—check it out!
-            </div>
-            <div class="alert alert-secondary" role="alert">
-              This is a secondary alert—check it out!
-            </div>
-            <div class="alert alert-success" role="alert">
-              This is a success alert—check it out!
-            </div>
-            <div class="alert alert-danger" role="alert">
-              This is a danger alert—check it out!
-            </div>
-            <div class="alert alert-warning" role="alert">
-              This is a warning alert—check it out!
-            </div>
-            <div class="alert alert-info" role="alert">
-              This is a info alert—check it out!
-            </div>
-            <div class="alert alert-light" role="alert">
-              This is a light alert—check it out!
-            </div>
-            <div class="alert alert-dark" role="alert">
-              This is a dark alert—check it out!
-            </div>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="badges">Badges</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/badge/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Badges</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <span class="badge badge-primary">Primary</span>
-            <span class="badge badge-secondary">Secondary</span>
-            <span class="badge badge-success">Success</span>
-            <span class="badge badge-danger">Danger</span>
-            <span class="badge badge-warning">Warning</span>
-            <span class="badge badge-info">Info</span>
-            <span class="badge badge-light">Light</span>
-            <span class="badge badge-dark">Dark</span>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="breadcrumbs">Breadcrumbs</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/breadcrumb/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Breadcrumbs</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">Home</li>
-                </ol>
-              </nav>
-  
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Library</li>
-                </ol>
-              </nav>
-  
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-              </nav>
-            </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="buttons">Buttons</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/buttons/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Buttons</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-light">Light</button>
-            <button type="button" class="btn btn-dark">Dark</button>
-            <button type="button" class="btn btn-link">Link</button>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="button-group">Button group</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/badge/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Button group</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">Left</button>
-                <button type="button" class="btn btn-secondary">Middle</button>
-                <button type="button" class="btn btn-secondary">Right</button>
-            </div>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="card">Card</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/card/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Card</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1672cde27ba%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1672cde27ba%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.6%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="carousel">Carousel</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/carousel/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Carousel</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ec%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ec%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.45%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>First slide label</h5>
-                      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ee%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ee%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.45%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ef%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ef%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.45%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                  </div>
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/alerts"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Alerts</strong>">
+                    </i>
+                  </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <div class="alert alert-primary" role="alert">
+                This is a primary alert—check it out!
+              </div>
+              <div class="alert alert-secondary" role="alert">
+                This is a secondary alert—check it out!
+              </div>
+              <div class="alert alert-success" role="alert">
+                This is a success alert—check it out!
+              </div>
+              <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+              </div>
+              <div class="alert alert-warning" role="alert">
+                This is a warning alert—check it out!
+              </div>
+              <div class="alert alert-info" role="alert">
+                This is a info alert—check it out!
+              </div>
+              <div class="alert alert-light" role="alert">
+                This is a light alert—check it out!
+              </div>
+              <div class="alert alert-dark" role="alert">
+                This is a dark alert—check it out!
+              </div>
+            </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="badges">Badges</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/badge/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Badges</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <span class="badge badge-primary">Primary</span>
+              <span class="badge badge-secondary">Secondary</span>
+              <span class="badge badge-success">Success</span>
+              <span class="badge badge-danger">Danger</span>
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-info">Info</span>
+              <span class="badge badge-light">Light</span>
+              <span class="badge badge-dark">Dark</span>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="breadcrumbs">Breadcrumbs</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/breadcrumb/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Breadcrumbs</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                  </ol>
+                </nav>
+    
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                  </ol>
+                </nav>
+    
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                  </ol>
+                </nav>
+              </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="buttons">Buttons</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/buttons/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Buttons</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <button type="button" class="btn btn-primary">Primary</button>
+              <button type="button" class="btn btn-secondary">Secondary</button>
+              <button type="button" class="btn btn-success">Success</button>
+              <button type="button" class="btn btn-danger">Danger</button>
+              <button type="button" class="btn btn-warning">Warning</button>
+              <button type="button" class="btn btn-info">Info</button>
+              <button type="button" class="btn btn-light">Light</button>
+              <button type="button" class="btn btn-dark">Dark</button>
+              <button type="button" class="btn btn-link">Link</button>
+            </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="button-group">Button group</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/badge/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Button group</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Left</button>
+                  <button type="button" class="btn btn-secondary">Middle</button>
+                  <button type="button" class="btn btn-secondary">Right</button>
+              </div>
+            </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="card">Card</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/card/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Card</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1672cde27ba%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1672cde27ba%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.6%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="carousel">Carousel</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/carousel/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Carousel</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ec%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ec%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.45%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ee%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ee%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.45%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167468f82ef%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167468f82ef%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.45%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+            </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="collapse">Collapse</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/collapse/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Collapse</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="g-section__content">
+              <p>
+                <a class="btn btn-primary collapsed" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Link with href
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="collapse">Collapse</h2>
+                <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Button with data-target
+                </button>
+              </p>
 
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/collapse/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Collapse</strong>">
-                  </i>
-                </a>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
               </div>
             </div>
-          </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="dropdowns">Dropdowns</h2>
 
-          <div class="c-section__content">
-            <p>
-              <a class="btn btn-primary collapsed" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Link with href
-              </a>
-              <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Button with data-target
-              </button>
-            </p>
-
-            <div class="collapse" id="collapseExample">
-              <div class="card card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="dropdowns">Dropdowns</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/dropdowns/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Dropdowns</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div class="btn-group">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
-              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secondary</button>
-              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warning</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danger</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title"  id="forms">Forms</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/forms/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Forms</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </section>
-                
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title" id="input-groups">Input groups</h2>
-
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   href="https://getbootstrap.com/docs/4.1/components/input-group/"
-                   target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Input groups</strong>">
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-section__content">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/dropdowns/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Dropdowns</strong>">
+                    </i>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <label for="basic-url">Your vanity URL</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+            <div class="g-section__content">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secondary</button>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warning</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danger</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title"  id="forms">Forms</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/forms/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Forms</strong>">
+                    </i>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-              <div class="input-group-append">
-                <span class="input-group-text">.00</span>
+            <div class="g-section__content">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </section>
+                  
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="input-groups">Input groups</h2>
+
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    href="https://getbootstrap.com/docs/4.1/components/input-group/"
+                    target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Input groups</strong>">
+                    </i>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">With textarea</span>
+            <div class="g-section__content">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basig-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basig-addon1">
               </div>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basig-addon2">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basig-addon2">@example.com</span>
+                </div>
+              </div>
+
+              <label for="basig-url">Your vanity URL</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basig-addon3">https://example.com/users/</span>
+                </div>
+                <input type="text" class="form-control" id="basig-url" aria-describedby="basig-addon3">
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">With textarea</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
+    </main>
+
+    <div class="e-toc">
+      <a class="btn btn-outline-success btn-block"
+        href="https://getbootstrap.com/docs/4.1/components/"
+        target="_blank">
+          View documentation
+      </a>
+
+      <ul class="e-toc__items">
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#alerts">Alerts</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#badges">Badges</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#breadcrumbs">Breadcrumbs</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#buttons">Buttons</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#button-group">Button group</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#card">Card</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#carousel">Carousel</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#collapse">Collapse</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#dropdowns">Dropdowns</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#forms">Forms</a>
+        </li>
+        <li class="e-toc__item">
+          <a class="e-toc__link" href="#input-groups">Input groups</a>
+        </li>
+      </ul>
     </div>
-  </main>
-
-  <div class="e-toc">
-    <a class="btn btn-outline-success btn-block"
-       href="https://getbootstrap.com/docs/4.1/components/"
-       target="_blank">
-        View documentation
-    </a>
-
-    <ul class="e-toc__items">
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#alerts">Alerts</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#badges">Badges</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#breadcrumbs">Breadcrumbs</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#buttons">Buttons</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#button-group">Button group</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#card">Card</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#carousel">Carousel</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#collapse">Collapse</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#dropdowns">Dropdowns</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#forms">Forms</a>
-      </li>
-      <li class="e-toc__item">
-        <a class="e-toc__link" href="#input-groups">Input groups</a>
-      </li>
-    </ul>
   </div>
-</div>
 
-@@include('./../partials/footer/footer.html')
-@@include('./../partials/scripts.html')
-@@include('./../partials/html-end.html')
+  @@include('./../partials/footer/footer.html')
+  @@include('./../partials/scripts.html')
+</body>
+</html>
+

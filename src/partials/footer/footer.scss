@@ -1,8 +1,9 @@
 @import "../../assets/scss/variables.scss";
 
-.c-footer {
+.g-footer {
   padding: 15px;
   background: #fff;
+  border-top: 1px solid #e6e9ed;
 
   @media (min-width: 768px) {
     margin-left: $sidebar-desktop-width;
@@ -10,5 +11,18 @@
 
   &--collapse {
     margin-left: $sidebar-mobile-width;
+  }
+
+  &--fixed {
+    .g-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .g-container {
+      margin-bottom: 49px;
+    }
   }
 }

@@ -6,10 +6,10 @@
 'use strict';
 
 (function ($) {
-  var $MAIN = $('.c-main');
-  var $SIDEBAR = $('.c-sidebar');
-  var $HEADER = $('.c-header');
-  var $FOOTER = $('.c-footer');
+  var $MAIN = $('.g-main');
+  var $SIDEBAR = $('.g-sidebar');
+  var $HEADER = $('.g-header');
+  var $FOOTER = $('.g-footer');
 
   window.ClnHelper = {
     resizeContent: function resizeContent() {
@@ -24,15 +24,15 @@
 'use strict';
 
 (function ($) {
-  var $CONTAINER = $('.c-container');
-  var $SIDEBAR = $('.c-sidebar');
-  var $SIDEBAR_TOGGLE = $('.c-header__sidebar-toggle');
-  var $FOOTER = $('.c-footer');
+  var $CONTAINER = $('.g-container');
+  var $SIDEBAR = $('.g-sidebar');
+  var $SIDEBAR_TOGGLE = $('.g-header__sidebar-toggle');
+  var $FOOTER = $('.g-footer');
 
   $SIDEBAR_TOGGLE.on('click', function () {
-    $SIDEBAR.toggleClass('c-sidebar--collapse');
-    $CONTAINER.toggleClass('c-container--collapse');
-    $FOOTER.toggleClass('c-footer--collapse');
+    $SIDEBAR.toggleClass('g-sidebar--collapse');
+    $CONTAINER.toggleClass('g-container--collapse');
+    $FOOTER.toggleClass('g-footer--collapse');
 
     window.ClnHelper.resizeContent();
   });
@@ -40,10 +40,10 @@
 'use strict';
 
 (function ($) {
-  var $SIDEBAR = $('.c-sidebar');
-  var $MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu-item');
-  var $MENU_LINK = $SIDEBAR.find('.c-sidebar__menu-link');
-  var $PARENT_MENU_ITEM = $SIDEBAR.find('.c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item');
+  var $SIDEBAR = $('.g-sidebar');
+  var $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
+  var $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
+  var $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
   var ms = window.ClnHelper.isTouchScreen ? 200 : 0;
 
   /**
@@ -54,7 +54,7 @@
   var bubbling = void 0;
 
   var isSidebarCollapse = function isSidebarCollapse() {
-    return $SIDEBAR.hasClass('c-sidebar--collapse');
+    return $SIDEBAR.hasClass('g-sidebar--collapse');
   };
   var resizeContent = function resizeContent() {
     return window.ClnHelper.resizeContent();
@@ -66,10 +66,10 @@
    */
   $MENU_LINK.filter(function (index, element) {
     return element.href === window.location.href.split('#')[0].split('?')[0];
-  }).parents('.c-sidebar__menu-item:eq(0), .c-sidebar__menu-item:eq(1), .c-sidebar__menu-item:eq(2)').addClass('c-sidebar__menu-item--active c-sidebar__menu-item--selected');
+  }).parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)').addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
   // Add arrow if multilevel menu
-  $MENU_ITEM.has('.c-sidebar__menu-list').addClass('c-sidebar__menu-item--arrow');
+  $MENU_ITEM.has('.g-sidebar__menu-list').addClass('g-sidebar__menu-item--arrow');
 
   $MENU_ITEM.on('click touchstart', function (e) {
     e.stopPropagation();
@@ -78,27 +78,27 @@
 
     bubbling = setTimeout(function () {
       var $element = $(e.currentTarget);
-      var $submenu = $element.children('.c-sidebar__menu-list');
+      var $submenu = $element.children('.g-sidebar__menu-list');
 
       if (!$submenu.length) return;
 
-      var isParentMenuItem = $element.parents(':eq(1)').hasClass('c-sidebar__menu');
+      var isParentMenuItem = $element.parents(':eq(1)').hasClass('g-sidebar__menu');
 
       if ($submenu.is(':visible')) {
         if (isSidebarCollapse() && isParentMenuItem) return;
 
-        $element.removeClass('c-sidebar__menu-item--active');
+        $element.removeClass('g-sidebar__menu-item--active');
 
-        $element.children('.c-sidebar__menu-list').slideUp();
+        $element.children('.g-sidebar__menu-list').slideUp();
 
         $submenu.slideUp(resizeContent);
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
-          $MENU_ITEM.removeClass('c-sidebar__menu-item--active');
-          $MENU_ITEM.children('.c-sidebar__menu-list').slideUp(resizeContent);
+          $MENU_ITEM.removeClass('g-sidebar__menu-item--active');
+          $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
         }
 
-        $element.addClass('c-sidebar__menu-item--active');
+        $element.addClass('g-sidebar__menu-item--active');
 
         if (!isSidebarCollapse() || !isParentMenuItem) {
           $submenu.slideDown(resizeContent);
@@ -116,18 +116,18 @@
     bubbling = setTimeout(function () {
       var $element = $(e.currentTarget);
 
-      if ($element.hasClass('c-sidebar__menu-item--toggle')) {
-        $element.removeClass('c-sidebar__menu-item--toggle');
+      if ($element.hasClass('g-sidebar__menu-item--toggle')) {
+        $element.removeClass('g-sidebar__menu-item--toggle');
       } else {
-        var $submenu = $element.children('.c-sidebar__menu-list');
-        var $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.c-sidebar__menu-item--active').not($element);
+        var $submenu = $element.children('.g-sidebar__menu-list');
+        var $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.g-sidebar__menu-item--active').not($element);
 
         if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
-          $MENU_ITEM.removeClass('c-sidebar__menu-item--active  c-sidebar__menu-item--toggle');
-          $MENU_ITEM.children('.c-sidebar__menu-list').css('display', 'none');
+          $MENU_ITEM.removeClass('g-sidebar__menu-item--active  g-sidebar__menu-item--toggle');
+          $MENU_ITEM.children('.g-sidebar__menu-list').css('display', 'none');
         }
 
-        $element.addClass('c-sidebar__menu-item--active c-sidebar__menu-item--toggle');
+        $element.addClass('g-sidebar__menu-item--active g-sidebar__menu-item--toggle');
 
         if ($submenu.length) {
           $submenu.css('display', 'block');
@@ -139,13 +139,13 @@
   $PARENT_MENU_ITEM.on('mouseleave', function (e) {
     if (!isSidebarCollapse()) return;
 
-    $(e.currentTarget).removeClass('c-sidebar__menu-item--toggle');
+    $(e.currentTarget).removeClass('g-sidebar__menu-item--toggle');
   });
 
   $(window).on('touchstart', function () {
     if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
 
-    $MENU_ITEM.filter('.c-sidebar__menu-item--toggle').removeClass('c-sidebar__menu-item--toggle');
+    $MENU_ITEM.filter('.g-sidebar__menu-item--toggle').removeClass('g-sidebar__menu-item--toggle');
   });
 
   /**

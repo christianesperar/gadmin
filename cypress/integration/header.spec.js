@@ -4,26 +4,26 @@ describe('Header', () => {
   });
 
   it('should toggle messages on mail icon click', () => {
-    cy.get('.c-header__nav-link:eq(1)')
+    cy.get('.g-header__nav-link:eq(1)')
       .click()
-      .get('.c-notification:contains(Show older messages)')
+      .get('.g-notification:contains(Show older messages)')
       .should('be.visible');
 
-    cy.get('.c-header__nav-link:eq(1)')
+    cy.get('.g-header__nav-link:eq(1)')
       .click()
-      .get('.c-notification:contains(Show older messages)')
+      .get('.g-notification:contains(Show older messages)')
       .should('not.be.visible');
   });
 
   it('should toggle options on arrow icon click', () => {
-    cy.get('.c-header__nav-link:eq(2)')
+    cy.get('.g-header__nav-link:eq(2)')
       .click()
-      .get('.c-notification:contains(Logout)')
+      .get('.g-notification:contains(Logout)')
       .should('be.visible');
 
-    cy.get('.c-header__nav-link:eq(2)')
+    cy.get('.g-header__nav-link:eq(2)')
       .click()
-      .get('.c-notification:contains(Logout)')
+      .get('.g-notification:contains(Logout)')
       .should('not.be.visible');
   });
 });

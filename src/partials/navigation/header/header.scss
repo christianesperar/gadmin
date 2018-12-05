@@ -1,6 +1,6 @@
-@import "../../assets/scss/variables.scss";
+@import "../../../assets/scss/variables.scss";
 
-.c-header {
+.g-header {
   position: relative;
   z-index: 1000;
   height: $header-height;
@@ -91,7 +91,7 @@
   }
 }
 
-.c-notification {
+.g-notification {
   top: 1px !important;
   width: 180px;
   margin-top: 0;
@@ -107,7 +107,7 @@
   &--messages {
     width: 280px;
 
-    .c-notification {
+    .g-notification {
       &__items {
         max-height: 200px;
         overflow: auto;
