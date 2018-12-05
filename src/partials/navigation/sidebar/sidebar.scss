@@ -1,7 +1,7 @@
-@import "../../assets/scss/variables.scss";
-@import "../../assets/scss/mixins.scss";
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/mixins.scss";
 
-.c-sidebar {
+.g-sidebar {
   position: absolute;
   top: 0;
   z-index: 999;
@@ -39,16 +39,20 @@
   &__footer {
     position: fixed;
     bottom: 0;
+    display: flex;
+    align-items: flex-end;
     width: $sidebar-desktop-width;
+    height: 50px;
     margin: 0;
     padding: 0;
     list-style: none;
-    background: #172d44;
+    background: #2a3f54;
 
     &-list {
       float: left;
       width: 25%;
       text-align: center;
+      background: #172d44;
     }
 
     &-link {
@@ -85,11 +89,10 @@
         right: 15px;
         color: #c4cfda;
         font-size: 10px;
-
         @include font-awesome("\f078");
       }
 
-      &--active.c-sidebar__menu-item--arrow::after {
+      &--active.g-sidebar__menu-item--arrow::after {
         content: "\f077";
       }
     }
@@ -114,11 +117,11 @@
       font-weight: 500;
       list-style: none;
 
-      .c-sidebar__menu-list {
+      .g-sidebar__menu-list {
         display: none;
         margin: 0;
 
-        .c-sidebar__menu {
+        .g-sidebar__menu {
           &-item {
             margin: 0;
 
@@ -140,7 +143,7 @@
 
           // Second Level Menu
           &-list {
-            .c-sidebar__menu-link {
+            .g-sidebar__menu-link {
               padding-left: 60px;
             }
           }
@@ -156,24 +159,24 @@
     }
 
     // Active and Selected state
-    > .c-sidebar__menu-list > .c-sidebar__menu-item {
+    > .g-sidebar__menu-list > .g-sidebar__menu-item {
       &--active,
       &--selected {
         color: #f2f5f7;
         background-color: #324558;
 
-        > .c-sidebar__menu-link {
+        > .g-sidebar__menu-link {
           color: #f2f5f7;
           text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
           background: linear-gradient(#334556, #2c4257), #2a3f54;
           box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
         }
 
-        .c-sidebar__menu-link:hover {
+        .g-sidebar__menu-link:hover {
           background-color: #3d4f62;
         }
 
-        .c-sidebar__menu-list > .c-sidebar__menu-item--active > .c-sidebar__menu-link {
+        .g-sidebar__menu-list > .g-sidebar__menu-item--active > .g-sidebar__menu-link {
           color: #f2f5f7;
           background-color: #3d4f62;
         }
@@ -182,25 +185,25 @@
       &--selected {
         border-left: 5px solid #1abb9c;
 
-        .c-sidebar__menu-link {
+        .g-sidebar__menu-link {
           padding-left: 40px;
         }
 
-        > .c-sidebar__menu-link {
+        > .g-sidebar__menu-link {
           padding-left: 10px;
         }
 
-        > .c-sidebar__menu-list {
+        > .g-sidebar__menu-list {
           display: block;
 
-          > .c-sidebar__menu-item--selected {
-            > .c-sidebar__menu-list {
+          > .g-sidebar__menu-item--selected {
+            > .g-sidebar__menu-list {
               display: block;
             }
           }
         }
 
-        .c-sidebar__menu-list .c-sidebar__menu-list .c-sidebar__menu-link {
+        .g-sidebar__menu-list .g-sidebar__menu-list .g-sidebar__menu-link {
           padding-left: 65px;
         }
       }
@@ -212,7 +215,7 @@
     display: block;
     width: $sidebar-mobile-width;
 
-    .c-sidebar {
+    .g-sidebar {
       &__site-name,
       &__details,
       &__menu-title,
@@ -228,22 +231,28 @@
         display: none;
         width: 50px;
       }
+
+      &__menu {
+        &-list {
+          margin-bottom: 0;
+        }
+      }
     }
 
-    .c-sidebar__menu > .c-sidebar__menu-list > .c-sidebar__menu-item {
-      &.c-sidebar__menu-item--arrow::after {
+    .g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item {
+      &.g-sidebar__menu-item--arrow::after {
         display: none;
       }
 
-      > .c-sidebar__menu-list {
+      > .g-sidebar__menu-list {
         display: none !important;
 
-        .c-sidebar__menu-link {
+        .g-sidebar__menu-link {
           padding-left: 15px;
         }
 
-        .c-sidebar__menu-list {
-          .c-sidebar__menu-link {
+        .g-sidebar__menu-list {
+          .g-sidebar__menu-link {
             padding-left: 30px;
           }
         }
@@ -253,7 +262,7 @@
         background: linear-gradient(#334556, #2c4257), #2a3f54;
         box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
 
-        .c-sidebar__menu-description {
+        .g-sidebar__menu-description {
           position: absolute;
           top: 0;
           left: 50px;
@@ -268,7 +277,7 @@
           box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0;
         }
 
-        > .c-sidebar__menu-list {
+        > .g-sidebar__menu-list {
           position: absolute;
           top: 43px;
           left: 50px;
@@ -280,9 +289,9 @@
         }
       }
 
-      &--selected.c-sidebar__menu-item--toggle {
-        .c-sidebar__menu-description,
-        > .c-sidebar__menu-list {
+      &--selected.g-sidebar__menu-item--toggle {
+        .g-sidebar__menu-description,
+        > .g-sidebar__menu-list {
           left: 45px;
         }
       }

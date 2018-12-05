@@ -13,261 +13,289 @@
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/excludable.css">
 
-  <title>Clone</title>
+  <title>GAdmin</title>
 </head>
 
+
 <body>
-  <header class="c-header">
-    <a class="c-header__title d-flex align-items-center justify-content-center" href="index.html">
-      <i class="far fa-clone"></i>
-      <span class="c-header__site-name">
-        &nbsp;Cl<span class="e-site-one">one</span>
-      </span>
-    </a>
+  <div class="g-navigation">
+    <header class="g-header">
+      <a class="g-header__title d-flex align-items-center justify-content-center" href="index.html">
+        <i class="far fa-clone"></i>
+        <span class="g-header__site-name">
+      &nbsp;G<span class="e-site-one">Admin</span>
+        </span>
+      </a>
 
-    <div class="d-flex justify-content-between">
-      <div class="d-flex align-items-center">
-        <a class="c-header__sidebar-toggle" href="javascript:void(0)">
-          <i class="fas fa-bars"></i>
-        </a>
-      </div>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <a class="g-header__sidebar-toggle" href="javascript:void(0)">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
 
-      <ul class="nav d-flex align-items-center">
-        <li class="c-header__nav-item dropdown">
-          <a class="c-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" href="#">
-            <img class="c-header__profile-photo rounded-circle" src="https://avatars3.githubusercontent.com/u/1621344?s=460&v=4">Christian
+        <ul class="nav d-flex align-items-center">
+          <li class="g-header__nav-item dropdown">
+            <a class="g-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" href="#">
+              <img class="g-header__profile-photo rounded-circle" src="https://avatars3.githubusercontent.com/u/1621344?s=460&v=4">Christian
+            </a>
+          </li>
+          <li class="g-header__nav-item dropdown">
+            <a class="g-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="g-header__icon far fa-envelope">
+            <span class="g-header__alert badge-success badge-pill">6</span>
+          </i>
+            </a>
+            <div class="g-notification g-notification--messages dropdown-menu dropdown-menu-right">
+              <div class="g-notification__items">
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/27.jpg">
+                    <span class="g-notification__title">John Doe</span>
+                    <span class="g-notification__message">Hey there!</span>
+                    <span class="g-notification__time">10 mins ago</span>
+                  </div>
+                </a>
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/women/68.jpg">
+                    <span class="g-notification__title">Jane Doe</span>
+                    <span class="g-notification__message">Thanks for using this theme!</span>
+                    <span class="g-notification__time">1 hour ago</span>
+                  </div>
+                </a>
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/60.jpg">
+                    <span class="g-notification__title">Richard Roe</span>
+                    <span class="g-notification__message">Cheers!</span>
+                    <span class="g-notification__time">1 day ago</span>
+                  </div>
+                </a>
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/27.jpg">
+                    <span class="g-notification__title">John Doe</span>
+                    <span class="g-notification__message">Hey there!</span>
+                    <span class="g-notification__time">15 days ago</span>
+                  </div>
+                </a>
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/women/68.jpg">
+                    <span class="g-notification__title">Jane Doe</span>
+                    <span class="g-notification__message">Thanks for using this theme!</span>
+                    <span class="g-notification__time">1 month ago</span>
+                  </div>
+                </a>
+                <a class="g-notification__item dropdown-item" href="#">
+                  <div>
+                    <img class="g-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/60.jpg">
+                    <span class="g-notification__title">Richard Roe</span>
+                    <span class="g-notification__message">Cheers!</span>
+                    <span class="g-notification__time">1 year ago</span>
+                  </div>
+                </a>
+              </div>
+              <a class="g-notification__item g-notification__item--toolbar dropdown-item text-center" href="#">
+            Show older messages
           </a>
-        </li>
-        <li class="c-header__nav-item dropdown">
-          <a class="c-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="c-header__icon far fa-envelope">
-              <span class="c-header__alert badge-success badge-pill">6</span>
-            </i>
-          </a>
-          <div class="c-notification c-notification--messages dropdown-menu dropdown-menu-right">
-            <div class="c-notification__items">
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/27.jpg">
-                  <span class="c-notification__title">John Doe</span>
-                  <span class="c-notification__message">Hey there!</span>
-                  <span class="c-notification__time">10 mins ago</span>
-                </div>
-              </a>
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/women/68.jpg">
-                  <span class="c-notification__title">Jane Doe</span>
-                  <span class="c-notification__message">Thanks for using this theme!</span>
-                  <span class="c-notification__time">1 hour ago</span>
-                </div>
-              </a>
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/60.jpg">
-                  <span class="c-notification__title">Richard Roe</span>
-                  <span class="c-notification__message">Cheers!</span>
-                  <span class="c-notification__time">1 day ago</span>
-                </div>
-              </a>
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/27.jpg">
-                  <span class="c-notification__title">John Doe</span>
-                  <span class="c-notification__message">Hey there!</span>
-                  <span class="c-notification__time">15 days ago</span>
-                </div>
-              </a>
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/women/68.jpg">
-                  <span class="c-notification__title">Jane Doe</span>
-                  <span class="c-notification__message">Thanks for using this theme!</span>
-                  <span class="c-notification__time">1 month ago</span>
-                </div>
-              </a>
-              <a class="c-notification__item dropdown-item" href="#">
-                <div>
-                  <img class="c-notification__image rounded-circle float-left" src="https://randomuser.me/api/portraits/men/60.jpg">
-                  <span class="c-notification__title">Richard Roe</span>
-                  <span class="c-notification__message">Cheers!</span>
-                  <span class="c-notification__time">1 year ago</span>
-                </div>
-              </a>
             </div>
-            <a class="c-notification__item c-notification__item--toolbar dropdown-item text-center" href="#">
-              Show older messages
-            </a>
-          </div>
-        </li>
+          </li>
 
-        <li class="c-header__nav-item dropdown">
-          <a class="c-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="c-header__icon c-header__icon--caret fas fa-caret-down"></i>
+          <li class="g-header__nav-item dropdown">
+            <a class="g-header__nav-link nav-link dropdown-toggle d-flex active align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="g-header__icon g-header__icon--caret fas fa-caret-down"></i>
+            </a>
+            <div class="g-notification dropdown-menu dropdown-menu-right">
+              <a class="g-notification__item dropdown-item" href="#">Help</a>
+              <a class="g-notification__item dropdown-item" href="#">Activity Log</a>
+              <a class="g-notification__item dropdown-item" href="#">Preferences</a>
+              <a class="g-notification__item dropdown-item" href="#">
+            Settings
+            <span class="badge badge-pill badge-danger float-right">50%</span>
           </a>
-          <div class="c-notification dropdown-menu dropdown-menu-right">
-            <a class="c-notification__item dropdown-item" href="#">Help</a>
-            <a class="c-notification__item dropdown-item" href="#">Activity Log</a>
-            <a class="c-notification__item dropdown-item" href="#">Preferences</a>
-            <a class="c-notification__item dropdown-item" href="#">
-              Settings
-              <span class="badge badge-pill badge-danger float-right">50%</span>
-            </a>
-            <div class="c-notification__divider dropdown-divider"></div>
-            <a class="c-notification__item dropdown-item" href="#">Logout</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </header>
-
-  <nav class="c-sidebar">
-    <div class="c-sidebar__profile container d-flex active align-items-center">
-      <img class="c-sidebar__profile-photo rounded-circle img-fluid" src="https://avatars3.githubusercontent.com/u/1621344?s=460&v=4" />
-
-      <div class="c-sidebar__details">
-        <span class="c-sidebar__profile-message">Welcome,</span>
-        <span class="c-sidebar__profile-name">Christian Esperar</span>
+              <div class="g-notification__divider dropdown-divider"></div>
+              <a class="g-notification__item dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </header>
 
-    <div class="c-sidebar__menu">
-      <span class="c-sidebar__menu-title">General</span>
-      <ul class="c-sidebar__menu-list">
-        <li class="c-sidebar__menu-item">
-          <a class="c-sidebar__menu-link" href="index.html">
-            <i class="c-sidebar__menu-icon fas fa-home"></i>
-            <span class="c-sidebar__menu-description">Dashboard</span>
-          </a>
-        </li>
+    <nav class="g-sidebar">
+      <div class="g-sidebar__profile container d-flex active align-items-center">
+        <img class="g-sidebar__profile-photo rounded-circle img-fluid" src="https://avatars3.githubusercontent.com/u/1621344?s=460&v=4" />
 
-        <li class="c-sidebar__menu-item">
-          <a class="c-sidebar__menu-link">
-            <i class="c-sidebar__menu-icon fas fa-file"></i>
-            <span class="c-sidebar__menu-description">Pages</span>
-          </a>
-          <ul class="c-sidebar__menu-list">
-            <li class="c-sidebar__menu-item">
-              <a class="c-sidebar__menu-link" href="pages-blank.html">
-              Blank
+        <div class="g-sidebar__details">
+          <span class="g-sidebar__profile-message">Welcome,</span>
+          <span class="g-sidebar__profile-name">Christian Esperar</span>
+        </div>
+      </div>
+
+      <div class="g-sidebar__menu">
+        <ul class="g-sidebar__menu-list">
+          <li class="g-sidebar__menu-item">
+            <a class="g-sidebar__menu-link" href="index.html">
+              <i class="g-sidebar__menu-icon fas fa-home"></i>
+              <span class="g-sidebar__menu-description">Dashboard</span>
             </a>
-            </li>
-          </ul>
-        </li>
+          </li>
 
-        <li class="c-sidebar__menu-item">
-          <a class="c-sidebar__menu-link" href="bootstrap-4-components.html">
-            <i class="c-sidebar__menu-icon fas e-bootstrap-logo-b">
+          <li class="g-sidebar__menu-item">
+            <a class="g-sidebar__menu-link" href="bootstrap-4-components.html">
+              <i class="g-sidebar__menu-icon fas e-bootstrap-logo-b">
             B <span class="e-bootstrap-logo-4">4</span>
           </i>
-            <span class="c-sidebar__menu-description">Components</span>
+              <span class="g-sidebar__menu-description">Components</span>
+            </a>
+          </li>
+        </ul>
+
+        <span class="g-sidebar__menu-title">Examples</span>
+
+        <ul class="g-sidebar__menu-list">
+          <li class="g-sidebar__menu-item">
+            <a class="g-sidebar__menu-link">
+              <i class="g-sidebar__menu-icon far fa-window-restore"></i>
+              <span class="g-sidebar__menu-description">Layout</span>
+            </a>
+            <ul class="g-sidebar__menu-list">
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="layout-fixed-navigation.html">
+              Fixed navigation
+            </a>
+              </li>
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="layout-fixed-footer.html">
+              Fixed footer
+            </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="g-sidebar__menu-item">
+            <a class="g-sidebar__menu-link">
+              <i class="g-sidebar__menu-icon fas fa-file"></i>
+              <span class="g-sidebar__menu-description">Pages</span>
+            </a>
+            <ul class="g-sidebar__menu-list">
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="pages-blank.html">
+              Blank
+            </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="g-sidebar__menu-item">
+            <a class="g-sidebar__menu-link">
+              <!-- <i class="g-sidebar__menu-icon fas fa-sitemap"></i> -->
+              <!-- <i class="g-sidebar__menu-icon fas fa-bars"></i> -->
+              <i class="g-sidebar__menu-icon fas fa-list-ul"></i>
+              <span class="g-sidebar__menu-description">Multilevel Menu</span>
+            </a>
+
+            <!-- First Level Menu -->
+            <ul class="g-sidebar__menu-list">
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="javascript:void(0)">
+              Level One
+            </a>
+              </li>
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="javascript:void(0)">
+              Level One
+            </a>
+
+                <!-- Second Level Menu -->
+                <ul class="g-sidebar__menu-list">
+                  <li class="g-sidebar__menu-item">
+                    <a class="g-sidebar__menu-link" href="javascript:void(0)">
+                  Level Two
+                </a>
+                  </li>
+                  <li class="g-sidebar__menu-item">
+                    <a class="g-sidebar__menu-link" href="javascript:void(0)">
+                  Level Two
+                </a>
+                  </li>
+                  <li class="g-sidebar__menu-item">
+                    <a class="g-sidebar__menu-link" href="javascript:void(0)">
+                  Level Two
+                </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="g-sidebar__menu-item">
+                <a class="g-sidebar__menu-link" href="javascript:void(0)">
+              Level One
+            </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="g-sidebar__footer">
+        <li class="g-sidebar__footer-list">
+          <a class="g-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Settings">
+            <i class="fas fa-cog"></i>
+          </a>
+        </li>
+        <li class="g-sidebar__footer-list">
+          <a class="g-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Fullscreen">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="g-sidebar__footer-list">
+          <a class="g-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Lock">
+            <i class="far fa-eye-slash"></i>
+          </a>
+        </li>
+        <li class="g-sidebar__footer-list">
+          <a class="g-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Logout">
+            <i class="fas fa-power-off"></i>
           </a>
         </li>
 
-        <li class="c-sidebar__menu-item">
-          <a class="c-sidebar__menu-link">
-            <i class="c-sidebar__menu-icon fas fa-sitemap"></i>
-            <span class="c-sidebar__menu-description">Multilevel Menu</span>
-          </a>
-
-          <!-- First Level Menu -->
-          <ul class="c-sidebar__menu-list">
-            <li class="c-sidebar__menu-item">
-              <a class="c-sidebar__menu-link" href="javascript:void(0)">
-              Level One
-            </a>
-            </li>
-            <li class="c-sidebar__menu-item">
-              <a class="c-sidebar__menu-link" href="javascript:void(0)">
-              Level One
-            </a>
-
-              <!-- Second Level Menu -->
-              <ul class="c-sidebar__menu-list">
-                <li class="c-sidebar__menu-item">
-                  <a class="c-sidebar__menu-link" href="javascript:void(0)">
-                  Level Two
-                </a>
-                </li>
-                <li class="c-sidebar__menu-item">
-                  <a class="c-sidebar__menu-link" href="javascript:void(0)">
-                  Level Two
-                </a>
-                </li>
-                <li class="c-sidebar__menu-item">
-                  <a class="c-sidebar__menu-link" href="javascript:void(0)">
-                  Level Two
-                </a>
-                </li>
-              </ul>
-            </li>
-            <li class="c-sidebar__menu-item">
-              <a class="c-sidebar__menu-link" href="javascript:void(0)">
-              Level One
-            </a>
-            </li>
-          </ul>
-        </li>
       </ul>
-    </div>
+    </nav>
 
-    <ul class="c-sidebar__footer">
-      <li class="c-sidebar__footer-list">
-        <a class="c-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Settings">
-          <i class="fas fa-cog"></i>
-        </a>
-      </li>
-      <li class="c-sidebar__footer-list">
-        <a class="c-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Fullscreen">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="c-sidebar__footer-list">
-        <a class="c-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Lock">
-          <i class="far fa-eye-slash"></i>
-        </a>
-      </li>
-      <li class="c-sidebar__footer-list">
-        <a class="c-sidebar__footer-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Logout">
-          <i class="fas fa-power-off"></i>
-        </a>
-      </li>
-
-    </ul>
-  </nav>
+  </div>
 
 
-  <div class="c-container">
-    <main class="c-main e--toc container-fluid" data-spy="scroll" data-target="#navbar-example3">
+  <div class="g-container">
+    <main class="g-main e--toc container-fluid" data-spy="scroll" data-target="#navbar-example3">
       <div class="row">
         <div class="col-12">
-          <div class="c-main__header">
-            <h1 class="c-main__title">Bootstrap 4 Components</h1>
-            <span class="c-main__subtitle">Over a dozen reusable components</span>
+          <div class="g-main__header">
+            <h1 class="g-main__title">Bootstrap 4 Components</h1>
+            <span class="g-main__subtitle">Over a dozen reusable components</span>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="alerts">Alerts</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="alerts">Alerts</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/alerts" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Alerts</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/alerts" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Alerts</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div class="alert alert-primary" role="alert">
                 This is a primary alert—check it out!
               </div>
@@ -295,25 +323,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="badges">Badges</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="badges">Badges</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/badge/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Badges</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/badge/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Badges</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <span class="badge badge-primary">Primary</span>
               <span class="badge badge-secondary">Secondary</span>
               <span class="badge badge-success">Success</span>
@@ -324,25 +352,25 @@
               <span class="badge badge-dark">Dark</span>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="breadcrumbs">Breadcrumbs</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="breadcrumbs">Breadcrumbs</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/breadcrumb/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Breadcrumbs</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/breadcrumb/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Breadcrumbs</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -369,25 +397,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="buttons">Buttons</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="buttons">Buttons</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/buttons/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Buttons</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/buttons/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Buttons</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <button type="button" class="btn btn-primary">Primary</button>
               <button type="button" class="btn btn-secondary">Secondary</button>
               <button type="button" class="btn btn-success">Success</button>
@@ -400,25 +428,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="button-group">Button group</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="button-group">Button group</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/badge/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Button group</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/badge/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Button group</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary">Left</button>
                 <button type="button" class="btn btn-secondary">Middle</button>
@@ -427,25 +455,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="card">Card</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="card">Card</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/card/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Card</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/card/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Card</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div class="card" style="width: 18rem;">
                 <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1672cde27ba%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1672cde27ba%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.6%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
                 data-holder-rendered="true">
@@ -458,25 +486,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="carousel">Carousel</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="carousel">Carousel</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/carousel/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Carousel</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/carousel/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Carousel</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -521,29 +549,29 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="collapse">Collapse</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="collapse">Collapse</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/collapse/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Collapse</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/collapse/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Collapse</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <p>
                 <a class="btn btn-primary collapsed" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Link with href
-              </a>
+                  Link with href
+                </a>
                 <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   Button with data-target
                 </button>
@@ -557,25 +585,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="dropdowns">Dropdowns</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="dropdowns">Dropdowns</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/dropdowns/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Dropdowns</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/dropdowns/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Dropdowns</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
@@ -639,25 +667,25 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="forms">Forms</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="forms">Forms</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/forms/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Forms</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/forms/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Forms</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <form>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
@@ -677,45 +705,45 @@
             </div>
           </section>
 
-          <section class="c-section">
-            <div class="c-section__header">
-              <h2 class="c-section__title" id="input-groups">Input groups</h2>
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title" id="input-groups">Input groups</h2>
 
-              <div class="c-section__toolbar">
+              <div class="g-section__toolbar">
                 <div class="dropdown">
-                  <a class="c-section__link" href="https://getbootstrap.com/docs/4.1/components/input-group/" target="_blank">
-                  <i class="fas fa-ellipsis-h"
-                     data-toggle="tooltip"
-                     data-placement="left"
-                     data-html="true"
-                     title="Read more about <strong>Input groups</strong>">
-                  </i>
-                </a>
+                  <a class="g-section__link" href="https://getbootstrap.com/docs/4.1/components/input-group/" target="_blank">
+                    <i class="fas fa-ellipsis-h"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      data-html="true"
+                      title="Read more about <strong>Input groups</strong>">
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div class="c-section__content">
+            <div class="g-section__content">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
+                  <span class="input-group-text" id="basig-addon1">@</span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basig-addon1">
               </div>
 
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basig-addon2">
                 <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">@example.com</span>
+                  <span class="input-group-text" id="basig-addon2">@example.com</span>
                 </div>
               </div>
 
-              <label for="basic-url">Your vanity URL</label>
+              <label for="basig-url">Your vanity URL</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                  <span class="input-group-text" id="basig-addon3">https://example.com/users/</span>
                 </div>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="basig-url" aria-describedby="basig-addon3">
               </div>
 
               <div class="input-group mb-3">
@@ -742,8 +770,8 @@
 
     <div class="e-toc">
       <a class="btn btn-outline-success btn-block" href="https://getbootstrap.com/docs/4.1/components/" target="_blank">
-        View documentation
-    </a>
+          View documentation
+      </a>
 
       <ul class="e-toc__items">
         <li class="e-toc__item">
@@ -783,7 +811,7 @@
     </div>
     </div>
 
-    <footer class="c-footer text-right">
+    <footer class="g-footer text-right">
       Cl<span class="e-site-one">one</span> - Free Bootstrap 4 Admin Template
     </footer>
 

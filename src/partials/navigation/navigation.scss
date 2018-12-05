@@ -1,0 +1,19 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
+
+.g-navigation {
+  &--fixed {
+    .g-header {
+      position: fixed;
+      width: 100%;
+    }
+
+    .g-sidebar {
+      position: fixed;
+    }
+
+    .g-container {
+      margin-top: 42px;
+    }
+  }
+}

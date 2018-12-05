@@ -1,46 +1,52 @@
-@@include('./../partials/header/header.html')
-@@include('./../partials/sidebar/sidebar.html')
+<!doctype html>
+<html lang="en">
 
-<div class="c-container">
-  <main class="c-main container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <h1>Blank <span class="c-main__subtitle">nice and clean</span></h1>
+@@include('./../partials/head.html')
+
+<body class="g-navigation--fixed">
+  @@include('./../partials/navigation/navigation.html')
+
+  <div class="g-container">
+    <main class="g-main container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>Blank <span class="g-main__subtitle">nice and clean</span></h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <section class="c-section">
-          <div class="c-section__header">
-            <h2 class="c-section__title">Title</h2>
+      <div class="row">
+        <div class="col-12">
+          <section class="g-section">
+            <div class="g-section__header">
+              <h2 class="g-section__title">Title</h2>
 
-            <div class="c-section__toolbar">
-              <div class="dropdown">
-                <a class="c-section__link"
-                   data-toggle="dropdown"
-                   aria-haspopup="true"
-                   aria-expanded="false">
-                  <i class="fas fa-ellipsis-h"></i>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Setting 1</a>
-                    <a class="dropdown-item" href="#">Setting 2</a>
-                    <div class="c-notification__divider dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Setting 3</a>
-                  </div>
-                </a>
+              <div class="g-section__toolbar">
+                <div class="dropdown">
+                  <a class="g-section__link"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Setting 1</a>
+                      <a class="dropdown-item" href="#">Setting 2</a>
+                      <div class="g-notification__divider dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Setting 3</a>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="c-section__content">
-            Content
-          </div>
-        </section>
+            <div class="g-section__content">
+              Content
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
-  </main>
-</div>
+    </main>
+  </div>
 
-@@include('./../partials/footer/footer.html')
-@@include('./../partials/scripts.html')
-@@include('./../partials/html-end.html')
+  @@include('./../partials/footer/footer.html')
+  @@include('./../partials/scripts.html')
+</body>
+</html>

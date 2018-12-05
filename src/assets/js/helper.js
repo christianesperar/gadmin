@@ -1,8 +1,8 @@
 (($) => {
-  const $MAIN = $('.c-main');
-  const $SIDEBAR = $('.c-sidebar');
-  const $HEADER = $('.c-header');
-  const $FOOTER = $('.c-footer');
+  const $MAIN = $('.g-main');
+  const $SIDEBAR = $('.g-sidebar');
+  const $HEADER = $('.g-header');
+  const $FOOTER = $('.g-footer');
 
   window.ClnHelper = {
     resizeContent: () => {
