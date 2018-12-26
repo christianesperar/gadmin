@@ -1,7 +1,7 @@
 # G<ins>admin</ins>
 Free Bootstrap 4 Gentelella inspired admin template
 
-![Preview 1](https://github.com/christianesperar/gadmin/blob/master/preview.jpg)
+![Preview 1](https://raw.githubusercontent.com/christianesperar/gadmin/master/preview.jpg)
 
 
 ## Installation
