@@ -11,4 +11,4 @@
 
     window.ClnHelper.resizeContent();
   });
-})(jQuery)
+})(jQuery);

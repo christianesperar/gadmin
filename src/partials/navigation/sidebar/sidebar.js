@@ -50,7 +50,11 @@
         $submenu.slideUp(resizeContent);
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
-          $MENU_ITEM.removeClass('g-sidebar__menu-item--active');
+          $MENU_LINK
+            .filter((index, element) => element.href !== window.location.href.split('#')[0].split('?')[0])
+            .parent()
+            .removeClass('g-sidebar__menu-item--active');
+
           $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
         }
 
@@ -110,4 +114,4 @@
   resizeContent();
 
   $(window).resize(resizeContent);
-})(jQuery)
+})(jQuery);

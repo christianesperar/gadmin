@@ -13,4 +13,4 @@
 
     isTouchScreen: 'ontouchstart' in document.documentElement,
   };
-})(jQuery)
+})(jQuery);
