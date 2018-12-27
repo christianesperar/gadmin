@@ -1,7 +1,7 @@
 {
   "name": "gadmin",
-  "version": "1.0.0-alpha.0",
-  "description": "",
+  "version": "1.0.0-alpha.1",
+  "description": "Free Bootstrap 4 Gentelella inspired admin template",
   "main": "index.js",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -33,7 +33,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "admin-dashboard",
+    "admin-template",
+    "bootstrap",
+    "bootstrap4",
+    "gentelella",
+    "html",
+    "html-template"
+  ],
+  "author": "Christian Esperar",
   "license": "MIT"
 }
