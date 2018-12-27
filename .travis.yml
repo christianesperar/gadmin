@@ -6,7 +6,7 @@ cache:
   directories:
     - ~/.cache
 install:
-  - npm install -g gulp-cli
+  - npm install gulp-cli -g
   - npm install http-server -g
   - npm ci
 before_script:
