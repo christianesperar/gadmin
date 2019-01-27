@@ -30,6 +30,7 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
+    "start": "http-server ./dist -p ${PORT:=8080}",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open"
   },
@@ -43,5 +44,8 @@
     "html-template"
   ],
   "author": "Christian Esperar",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }
