@@ -4,7 +4,7 @@
   const $HEADER = $('.g-header');
   const $FOOTER = $('.g-footer');
 
-  window.ClnHelper = {
+  window.GadminHelper = {
     resizeContent: () => {
       const height = $SIDEBAR.outerHeight() - $HEADER.outerHeight() - $FOOTER.outerHeight();
 

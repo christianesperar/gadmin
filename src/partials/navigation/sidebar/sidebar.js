@@ -3,7 +3,7 @@
   const $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   const $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  const ms = window.ClnHelper.isTouchScreen ? 200 : 0;
+  const ms = window.GadminHelper.isTouchScreen ? 200 : 0;
 
   /**
   * Collapse and mobile
@@ -13,7 +13,7 @@
   let bubbling;
 
   const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
-  const resizeContent = () => window.ClnHelper.resizeContent();
+  const resizeContent = () => window.GadminHelper.resizeContent();
 
   /**
    * Search for the current link and add `active` and `selected` class to parent menu item
@@ -103,7 +103,7 @@
   });
 
   $(window).on('touchstart', () => {
-    if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
+    if (!isSidebarCollapse() || !window.GadminHelper.isTouchScreen) return;
 
     $MENU_ITEM.filter('.g-sidebar__menu-item--toggle').removeClass('g-sidebar__menu-item--toggle');
   });

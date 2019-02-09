@@ -11,7 +11,7 @@
   var $HEADER = $('.g-header');
   var $FOOTER = $('.g-footer');
 
-  window.ClnHelper = {
+  window.GadminHelper = {
     resizeContent: function resizeContent() {
       var height = $SIDEBAR.outerHeight() - $HEADER.outerHeight() - $FOOTER.outerHeight();
 
@@ -34,7 +34,7 @@
     $CONTAINER.toggleClass('g-container--collapse');
     $FOOTER.toggleClass('g-footer--collapse');
 
-    window.ClnHelper.resizeContent();
+    window.GadminHelper.resizeContent();
   });
 })(jQuery);
 'use strict';
@@ -44,7 +44,7 @@
   var $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   var $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   var $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  var ms = window.ClnHelper.isTouchScreen ? 200 : 0;
+  var ms = window.GadminHelper.isTouchScreen ? 200 : 0;
 
   /**
   * Collapse and mobile
@@ -57,7 +57,7 @@
     return $SIDEBAR.hasClass('g-sidebar--collapse');
   };
   var resizeContent = function resizeContent() {
-    return window.ClnHelper.resizeContent();
+    return window.GadminHelper.resizeContent();
   };
 
   /**
@@ -146,7 +146,7 @@
   });
 
   $(window).on('touchstart', function () {
-    if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
+    if (!isSidebarCollapse() || !window.GadminHelper.isTouchScreen) return;
 
     $MENU_ITEM.filter('.g-sidebar__menu-item--toggle').removeClass('g-sidebar__menu-item--toggle');
   });
