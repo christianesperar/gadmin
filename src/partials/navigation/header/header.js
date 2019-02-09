@@ -9,6 +9,6 @@
     $CONTAINER.toggleClass('g-container--collapse');
     $FOOTER.toggleClass('g-footer--collapse');
 
-    window.ClnHelper.resizeContent();
+    window.GadminHelper.resizeContent();
   });
 })(jQuery);
