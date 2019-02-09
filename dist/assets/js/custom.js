@@ -10,6 +10,7 @@
   var $SIDEBAR = $('.g-sidebar');
   var $HEADER = $('.g-header');
   var $FOOTER = $('.g-footer');
+  var CURRENT_URL = window.location.href.split('#')[0].split('?')[0];
 
   window.GadminHelper = {
     resizeContent: function resizeContent() {
@@ -18,7 +19,11 @@
       $MAIN.css('min-height', height);
     },
 
-    isTouchScreen: 'ontouchstart' in document.documentElement
+    isTouchScreen: 'ontouchstart' in document.documentElement,
+
+    isCurrentUrl: function isCurrentUrl(href) {
+      return href === CURRENT_URL || CURRENT_URL.indexOf(href + 'index') > -1 || href.indexOf(CURRENT_URL + 'index') > -1;
+    }
   };
 })(jQuery);
 'use strict';
@@ -44,7 +49,7 @@
   var $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   var $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   var $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  var ms = window.GadminHelper.isTouchScreen ? 200 : 0;
+  var MS = window.GadminHelper.isTouchScreen ? 200 : 0;
 
   /**
   * Collapse and mobile
@@ -65,7 +70,11 @@
    * Please note that this is ideally handle by server side rendering
    */
   $MENU_LINK.filter(function (index, element) {
-    return element.href === window.location.href.split('#')[0].split('?')[0];
+    if (!element.href) {
+      return false;
+    }
+
+    return window.GadminHelper.isCurrentUrl(element.href);
   }).parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)').addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
   // Add arrow if multilevel menu
@@ -95,7 +104,7 @@
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
           $MENU_LINK.filter(function (index, element) {
-            return element.href !== window.location.href.split('#')[0].split('?')[0];
+            return !window.GadminHelper.isCurrentUrl(element.href);
           }).parent().removeClass('g-sidebar__menu-item--active');
 
           $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
@@ -107,7 +116,7 @@
           $submenu.slideDown(resizeContent);
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseenter click touchstart', function (e) {
@@ -136,7 +145,7 @@
           $submenu.css('display', 'block');
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', function (e) {

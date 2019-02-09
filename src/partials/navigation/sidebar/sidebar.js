@@ -3,7 +3,7 @@
   const $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   const $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  const ms = window.GadminHelper.isTouchScreen ? 200 : 0;
+  const MS = window.GadminHelper.isTouchScreen ? 200 : 0;
 
   /**
   * Collapse and mobile
@@ -20,7 +20,13 @@
    * Please note that this is ideally handle by server side rendering
    */
   $MENU_LINK
-    .filter((index, element) => element.href === window.location.href.split('#')[0].split('?')[0])
+    .filter((index, element) => {
+      if (!element.href) {
+        return false;
+      }
+
+      return window.GadminHelper.isCurrentUrl(element.href);
+    })
     .parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)')
     .addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
@@ -51,7 +57,7 @@
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
           $MENU_LINK
-            .filter((index, element) => element.href !== window.location.href.split('#')[0].split('?')[0])
+            .filter((index, element) => !window.GadminHelper.isCurrentUrl(element.href))
             .parent()
             .removeClass('g-sidebar__menu-item--active');
 
@@ -64,7 +70,7 @@
           $submenu.slideDown(resizeContent);
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseenter click touchstart', (e) => {
@@ -93,7 +99,7 @@
           $submenu.css('display', 'block');
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', (e) => {
