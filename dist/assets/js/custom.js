@@ -10,15 +10,20 @@
   var $SIDEBAR = $('.g-sidebar');
   var $HEADER = $('.g-header');
   var $FOOTER = $('.g-footer');
+  var CURRENT_URL = window.location.href.split('#')[0].split('?')[0];
 
-  window.ClnHelper = {
+  window.GadminHelper = {
     resizeContent: function resizeContent() {
       var height = $SIDEBAR.outerHeight() - $HEADER.outerHeight() - $FOOTER.outerHeight();
 
       $MAIN.css('min-height', height);
     },
 
-    isTouchScreen: 'ontouchstart' in document.documentElement
+    isTouchScreen: 'ontouchstart' in document.documentElement,
+
+    isCurrentUrl: function isCurrentUrl(href) {
+      return href === CURRENT_URL || CURRENT_URL.indexOf(href + 'index') > -1 || href.indexOf(CURRENT_URL + 'index') > -1;
+    }
   };
 })(jQuery);
 'use strict';
@@ -34,7 +39,7 @@
     $CONTAINER.toggleClass('g-container--collapse');
     $FOOTER.toggleClass('g-footer--collapse');
 
-    window.ClnHelper.resizeContent();
+    window.GadminHelper.resizeContent();
   });
 })(jQuery);
 'use strict';
@@ -44,7 +49,23 @@
   var $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   var $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   var $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  var ms = window.ClnHelper.isTouchScreen ? 200 : 0;
+  var MS = window.GadminHelper.isTouchScreen ? 200 : 0;
+
+  var isSidebarCollapse = function isSidebarCollapse() {
+    return $SIDEBAR.hasClass('g-sidebar--collapse');
+  };
+  var resizeContent = function resizeContent() {
+    return window.GadminHelper.resizeContent();
+  };
+
+  /**
+   * Remove the active state of the menu items except the menu that has the current url
+   */
+  var removeActiveMenuItems = function removeActiveMenuItems() {
+    $MENU_LINK.filter(function (index, element) {
+      return !window.GadminHelper.isCurrentUrl(element.href);
+    }).parent().removeClass('g-sidebar__menu-item--active g-sidebar__menu-item--toggle');
+  };
 
   /**
   * Collapse and mobile
@@ -53,19 +74,16 @@
   */
   var bubbling = void 0;
 
-  var isSidebarCollapse = function isSidebarCollapse() {
-    return $SIDEBAR.hasClass('g-sidebar--collapse');
-  };
-  var resizeContent = function resizeContent() {
-    return window.ClnHelper.resizeContent();
-  };
-
   /**
    * Search for the current link and add `active` and `selected` class to parent menu item
    * Please note that this is ideally handle by server side rendering
    */
   $MENU_LINK.filter(function (index, element) {
-    return element.href === window.location.href.split('#')[0].split('?')[0];
+    if (!element.href) {
+      return false;
+    }
+
+    return window.GadminHelper.isCurrentUrl(element.href);
   }).parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)').addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
   // Add arrow if multilevel menu
@@ -94,10 +112,7 @@
         $submenu.slideUp(resizeContent);
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
-          $MENU_LINK.filter(function (index, element) {
-            return element.href !== window.location.href.split('#')[0].split('?')[0];
-          }).parent().removeClass('g-sidebar__menu-item--active');
-
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
         }
 
@@ -107,7 +122,7 @@
           $submenu.slideDown(resizeContent);
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseenter click touchstart', function (e) {
@@ -126,7 +141,7 @@
         var $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.g-sidebar__menu-item--active').not($element);
 
         if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
-          $MENU_ITEM.removeClass('g-sidebar__menu-item--active  g-sidebar__menu-item--toggle');
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').css('display', 'none');
         }
 
@@ -136,7 +151,7 @@
           $submenu.css('display', 'block');
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', function (e) {
@@ -146,7 +161,7 @@
   });
 
   $(window).on('touchstart', function () {
-    if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
+    if (!isSidebarCollapse() || !window.GadminHelper.isTouchScreen) return;
 
     $MENU_ITEM.filter('.g-sidebar__menu-item--toggle').removeClass('g-sidebar__menu-item--toggle');
   });

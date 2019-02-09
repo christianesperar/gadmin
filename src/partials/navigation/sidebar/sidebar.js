@@ -3,7 +3,20 @@
   const $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   const $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
-  const ms = window.ClnHelper.isTouchScreen ? 200 : 0;
+  const MS = window.GadminHelper.isTouchScreen ? 200 : 0;
+
+  const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
+  const resizeContent = () => window.GadminHelper.resizeContent();
+
+  /**
+   * Remove the active state of the menu items except the menu that has the current url
+   */
+  const removeActiveMenuItems = () => {
+    $MENU_LINK
+      .filter((index, element) => !window.GadminHelper.isCurrentUrl(element.href))
+      .parent()
+      .removeClass('g-sidebar__menu-item--active g-sidebar__menu-item--toggle');
+  };
 
   /**
   * Collapse and mobile
@@ -12,15 +25,18 @@
   */
   let bubbling;
 
-  const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
-  const resizeContent = () => window.ClnHelper.resizeContent();
-
   /**
    * Search for the current link and add `active` and `selected` class to parent menu item
    * Please note that this is ideally handle by server side rendering
    */
   $MENU_LINK
-    .filter((index, element) => element.href === window.location.href.split('#')[0].split('?')[0])
+    .filter((index, element) => {
+      if (!element.href) {
+        return false;
+      }
+
+      return window.GadminHelper.isCurrentUrl(element.href);
+    })
     .parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)')
     .addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
@@ -50,11 +66,7 @@
         $submenu.slideUp(resizeContent);
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
-          $MENU_LINK
-            .filter((index, element) => element.href !== window.location.href.split('#')[0].split('?')[0])
-            .parent()
-            .removeClass('g-sidebar__menu-item--active');
-
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
         }
 
@@ -64,7 +76,7 @@
           $submenu.slideDown(resizeContent);
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseenter click touchstart', (e) => {
@@ -83,7 +95,7 @@
         const $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.g-sidebar__menu-item--active').not($element);
 
         if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
-          $MENU_ITEM.removeClass('g-sidebar__menu-item--active  g-sidebar__menu-item--toggle');
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').css('display', 'none');
         }
 
@@ -93,7 +105,7 @@
           $submenu.css('display', 'block');
         }
       }
-    }, ms);
+    }, MS);
   });
 
   $PARENT_MENU_ITEM.on('mouseleave', (e) => {
@@ -103,7 +115,7 @@
   });
 
   $(window).on('touchstart', () => {
-    if (!isSidebarCollapse() || !window.ClnHelper.isTouchScreen) return;
+    if (!isSidebarCollapse() || !window.GadminHelper.isTouchScreen) return;
 
     $MENU_ITEM.filter('.g-sidebar__menu-item--toggle').removeClass('g-sidebar__menu-item--toggle');
   });
