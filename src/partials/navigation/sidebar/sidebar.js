@@ -5,15 +5,25 @@
   const $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
   const MS = window.GadminHelper.isTouchScreen ? 200 : 0;
 
+  const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
+  const resizeContent = () => window.GadminHelper.resizeContent();
+
+  /**
+   * Remove the active state of the menu items except the menu that has the current url
+   */
+  const removeActiveMenuItems = () => {
+    $MENU_LINK
+      .filter((index, element) => !window.GadminHelper.isCurrentUrl(element.href))
+      .parent()
+      .removeClass('g-sidebar__menu-item--active g-sidebar__menu-item--toggle');
+  };
+
   /**
   * Collapse and mobile
   * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
   * are both triggered on mobile
   */
   let bubbling;
-
-  const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
-  const resizeContent = () => window.GadminHelper.resizeContent();
 
   /**
    * Search for the current link and add `active` and `selected` class to parent menu item
@@ -56,11 +66,7 @@
         $submenu.slideUp(resizeContent);
       } else {
         if (!isSidebarCollapse() && isParentMenuItem) {
-          $MENU_LINK
-            .filter((index, element) => !window.GadminHelper.isCurrentUrl(element.href))
-            .parent()
-            .removeClass('g-sidebar__menu-item--active');
-
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').slideUp(resizeContent);
         }
 
@@ -89,7 +95,7 @@
         const $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.g-sidebar__menu-item--active').not($element);
 
         if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
-          $MENU_ITEM.removeClass('g-sidebar__menu-item--active  g-sidebar__menu-item--toggle');
+          removeActiveMenuItems();
           $MENU_ITEM.children('.g-sidebar__menu-list').css('display', 'none');
         }
 

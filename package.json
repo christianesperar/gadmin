@@ -1,6 +1,6 @@
 {
   "name": "gadmin",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Free Bootstrap 4 Gentelella inspired admin template",
   "main": "index.js",
   "devDependencies": {
