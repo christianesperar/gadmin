@@ -7,19 +7,19 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
-const prettify = require('gulp-html-prettify');
+const prettier = require('gulp-prettier');
 
 gulp.task('build', () =>
   gulp.src([
     'src/pages/*.html',
-    'src/pages/**/*.html',
-  ]).pipe(fileInclude({
-    prefix: '@@',
-    basepath: '@file',
-  })).pipe(prettify({
-    indent_char: ' ',
-    indent_size: 2,
-  })).pipe(gulp.dest('dist')));
+    'src/pages/**/index.html',
+  ])
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file',
+    }))
+    .pipe(prettier())
+    .pipe(gulp.dest('dist')));
 
 const compileSASS = (directories, filename, outputStyle = 'nested') =>
   gulp.src(directories)
@@ -62,7 +62,13 @@ gulp.task('scripts', () =>
     .pipe(gulp.dest('dist/assets/js')));
 
 gulp.task('watch', () => {
-  gulp.watch('src/**/*.html', gulp.series('build'));
+  gulp.watch(
+    [
+      'src/**/*.html',
+      'src/**/*.json',
+    ],
+    gulp.series('build'),
+  );
   gulp.watch('src/**/*.scss', gulp.series('sass'));
   gulp.watch('src/**/*.js', gulp.series('scripts'));
 });
