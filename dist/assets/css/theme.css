@@ -20,7 +20,7 @@
 .g-list__bullet::before {
   content: "";
   font-weight: 900;
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-style: normal; }
 
 .g-container {
@@ -230,7 +230,7 @@ a:hover {
 .g-header__nav-link {
   height: 100%; }
 
-.g-header__nav-link:hover, .g-header__nav-link[aria-expanded="true"] {
+.g-header__nav-link:hover, .g-header__nav-link[aria-expanded='true'] {
   color: #23527c !important;
   background: #d9dee4; }
 
@@ -253,7 +253,7 @@ a:hover {
   color: #fff;
   font-weight: 500;
   font-size: 10px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 13px; }
 
 .g-header__profile-photo {
@@ -410,11 +410,11 @@ a:hover {
   font-size: 10px;
   content: "";
   font-weight: 900;
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-style: normal; }
 
 .g-sidebar__menu-item--active.g-sidebar__menu-item--arrow::after {
-  content: "\f077"; }
+  content: '\f077'; }
 
 .g-sidebar__menu-link {
   display: block;

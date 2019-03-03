@@ -10,19 +10,21 @@ const babel = require('gulp-babel');
 const prettier = require('gulp-prettier');
 
 gulp.task('build', () =>
-  gulp.src([
-    'src/pages/*.html',
-    'src/pages/**/index.html',
-  ])
-    .pipe(fileInclude({
-      prefix: '@@',
-      basepath: '@file',
-    }))
+  gulp
+    .src(['src/pages/*.html', 'src/pages/**/index.html'])
+    .pipe(
+      fileInclude({
+        prefix: '@@',
+        basepath: '@file'
+      })
+    )
     .pipe(prettier())
-    .pipe(gulp.dest('dist')));
+    .pipe(gulp.dest('dist'))
+);
 
 const compileSASS = (directories, filename, outputStyle = 'nested') =>
-  gulp.src(directories)
+  gulp
+    .src(directories)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions', '> 5%'))
     .pipe(sass({ outputStyle }))
@@ -35,9 +37,9 @@ gulp.task('sass', () => {
     theme: [
       'src/assets/scss/theme/*.scss',
       'src/partials/**/*.scss',
-      'src/assets/scss/libraries/*.scss',
+      'src/assets/scss/libraries/*.scss'
     ],
-    excludable: 'src/assets/scss/excludable.scss',
+    excludable: 'src/assets/scss/excludable.scss'
   };
 
   return merge(
@@ -46,42 +48,31 @@ gulp.task('sass', () => {
     compileSASS(path.excludable, 'excludable.css'),
     compileSASS(path.theme, 'theme.min.css', 'compressed'),
     compileSASS(path.bootstrap, 'bootstrap.min.css', 'compressed'),
-    compileSASS(path.excludable, 'excludable.min.css', 'compressed'),
+    compileSASS(path.excludable, 'excludable.min.css', 'compressed')
   );
 });
 
 gulp.task('scripts', () =>
-  gulp.src('src/**/*.js')
-    .pipe(babel({
-      presets: ['es2015'],
-    }))
+  gulp
+    .src('src/**/*.js')
+    .pipe(
+      babel({
+        presets: ['es2015']
+      })
+    )
     .pipe(concat('custom.js'))
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/assets/js')));
+    .pipe(gulp.dest('dist/assets/js'))
+);
 
 gulp.task('watch', () => {
-  gulp.watch(
-    [
-      'src/**/*.html',
-      'src/**/*.json',
-    ],
-    gulp.series('build'),
-  );
+  gulp.watch(['src/**/*.html', 'src/**/*.json'], gulp.series('build'));
   gulp.watch('src/**/*.scss', gulp.series('sass'));
   gulp.watch('src/**/*.js', gulp.series('scripts'));
 });
 
-gulp.task('ci', gulp.parallel(
-  'build',
-  'sass',
-  'scripts',
-));
+gulp.task('ci', gulp.parallel('build', 'sass', 'scripts'));
 
-gulp.task('default', gulp.parallel(
-  'build',
-  'sass',
-  'scripts',
-  'watch',
-));
+gulp.task('default', gulp.parallel('build', 'sass', 'scripts', 'watch'));

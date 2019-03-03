@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables.scss";
+@import '../../../assets/scss/variables.scss';
 
 .g-header {
   position: relative;
@@ -47,7 +47,7 @@
     height: 100%;
 
     &:hover,
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
       color: #23527c !important;
       background: #d9dee4;
     }
@@ -75,7 +75,7 @@
     color: #fff;
     font-weight: 500;
     font-size: 10px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 13px;
   }
 

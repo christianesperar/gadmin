@@ -4,20 +4,20 @@ describe('Sidebar', () => {
   });
 
   it('should have active state', () => {
-    cy.get('.g-sidebar__menu-item:contains(Dashboard)')
-      .should('have.class', 'g-sidebar__menu-item--selected');
+    cy.get('.g-sidebar__menu-item:contains(Dashboard)').should(
+      'have.class',
+      'g-sidebar__menu-item--selected'
+    );
   });
 
   it('should be collapsible', () => {
     cy.get('.g-header__sidebar-toggle').click();
 
-    cy.get('.g-sidebar')
-      .should('have.class', 'g-sidebar--collapse');
+    cy.get('.g-sidebar').should('have.class', 'g-sidebar--collapse');
 
     cy.get('.g-header__sidebar-toggle').click();
 
-    cy.get('.g-sidebar')
-      .should('not.have.class', 'g-sidebar--collapse');
+    cy.get('.g-sidebar').should('not.have.class', 'g-sidebar--collapse');
   });
 });
 
@@ -47,8 +47,7 @@ describe('Sidebar Expand', () => {
   });
 
   it('should have sidebar footer', () => {
-    cy.get('.g-sidebar__footer')
-      .should('be.visible');
+    cy.get('.g-sidebar__footer').should('be.visible');
   });
 });
 
@@ -74,23 +73,18 @@ describe('Sidebar Collapse', () => {
   });
 
   it('menu item should show on hover', () => {
-    cy.get('.g-sidebar__menu-item:contains(Multilevel Menu)')
-      .trigger('mouseover');
+    cy.get('.g-sidebar__menu-item:contains(Multilevel Menu)').trigger('mouseover');
 
-    cy.get('.g-sidebar__menu-description:contains(Multilevel Menu)')
-      .should('be.visible');
+    cy.get('.g-sidebar__menu-description:contains(Multilevel Menu)').should('be.visible');
   });
 
   it('menu item should show on click', () => {
-    cy.get('.g-sidebar__menu-item:contains(Multilevel Menu)')
-      .click();
+    cy.get('.g-sidebar__menu-item:contains(Multilevel Menu)').click();
 
-    cy.get('.g-sidebar__menu-description:contains(Multilevel Menu)')
-      .should('be.visible');
+    cy.get('.g-sidebar__menu-description:contains(Multilevel Menu)').should('be.visible');
   });
 
   it('should not have sidebar footer', () => {
-    cy.get('.g-sidebar__footer')
-      .should('not.be.visible');
+    cy.get('.g-sidebar__footer').should('not.be.visible');
   });
 });

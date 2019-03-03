@@ -1,8 +1,10 @@
-(($) => {
+($ => {
   const $SIDEBAR = $('.g-sidebar');
   const $MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu-item');
   const $MENU_LINK = $SIDEBAR.find('.g-sidebar__menu-link');
-  const $PARENT_MENU_ITEM = $SIDEBAR.find('.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item');
+  const $PARENT_MENU_ITEM = $SIDEBAR.find(
+    '.g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item'
+  );
   const MS = window.GadminHelper.isTouchScreen ? 200 : 0;
 
   const isSidebarCollapse = () => $SIDEBAR.hasClass('g-sidebar--collapse');
@@ -19,10 +21,10 @@
   };
 
   /**
-  * Collapse and mobile
-  * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
-  * are both triggered on mobile
-  */
+   * Collapse and mobile
+   * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
+   * are both triggered on mobile
+   */
   let bubbling;
 
   /**
@@ -37,13 +39,15 @@
 
       return window.GadminHelper.isCurrentUrl(element.href);
     })
-    .parents('.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)')
+    .parents(
+      '.g-sidebar__menu-item:eq(0), .g-sidebar__menu-item:eq(1), .g-sidebar__menu-item:eq(2)'
+    )
     .addClass('g-sidebar__menu-item--active g-sidebar__menu-item--selected');
 
   // Add arrow if multilevel menu
   $MENU_ITEM.has('.g-sidebar__menu-list').addClass('g-sidebar__menu-item--arrow');
 
-  $MENU_ITEM.on('click touchstart', (e) => {
+  $MENU_ITEM.on('click touchstart', e => {
     e.stopPropagation();
 
     clearTimeout(bubbling);
@@ -79,7 +83,7 @@
     }, MS);
   });
 
-  $PARENT_MENU_ITEM.on('mouseenter click touchstart', (e) => {
+  $PARENT_MENU_ITEM.on('mouseenter click touchstart', e => {
     e.stopPropagation();
     if (!isSidebarCollapse()) return;
 
@@ -92,7 +96,9 @@
         $element.removeClass('g-sidebar__menu-item--toggle');
       } else {
         const $submenu = $element.children('.g-sidebar__menu-list');
-        const $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM.filter('.g-sidebar__menu-item--active').not($element);
+        const $SIDEBAR_MENU_ITEM_ACTIVE = $PARENT_MENU_ITEM
+          .filter('.g-sidebar__menu-item--active')
+          .not($element);
 
         if ($SIDEBAR_MENU_ITEM_ACTIVE.length) {
           removeActiveMenuItems();
@@ -108,7 +114,7 @@
     }, MS);
   });
 
-  $PARENT_MENU_ITEM.on('mouseleave', (e) => {
+  $PARENT_MENU_ITEM.on('mouseleave', e => {
     if (!isSidebarCollapse()) return;
 
     $(e.currentTarget).removeClass('g-sidebar__menu-item--toggle');

@@ -1,43 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  @@include('./../../partials/head.html')
 
-@@include('./../../partials/head.html')
+  <body>
+    @@include('./../../partials/navigation/navigation.html')
 
-<body>
-  @@include('./../../partials/navigation/navigation.html')
-
-  <div class="g-container">
-    <main class="g-main e--toc container-fluid" data-spy="scroll" data-target="#navbar-example3">
-      <div class="row">
-        <div class="col-12">
-          <div class="g-main__header">
-            <h1 class="g-main__title">Bootstrap 4 Components</h1>
-            <span class="g-main__subtitle">Over a dozen reusable components</span>
+    <div class="g-container">
+      <main
+        class="g-main e--toc container-fluid"
+        data-spy="scroll"
+        data-target="#navbar-example3"
+      >
+        <div class="row">
+          <div class="col-12">
+            <div class="g-main__header">
+              <h1 class="g-main__title">Bootstrap 4 Components</h1>
+              <span class="g-main__subtitle"
+                >Over a dozen reusable components</span
+              >
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          @@loop('preview.html', '/bootstrap-4-components/data.json')
+        <div class="row">
+          <div class="col-12">
+            @@loop('preview.html', '/bootstrap-4-components/data.json')
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <div class="e-toc">
-      <a class="btn btn-outline-success btn-block"
-        href="https://getbootstrap.com/docs/4.1/components/"
-        target="_blank">
+      <div class="e-toc">
+        <a
+          class="btn btn-outline-success btn-block"
+          href="https://getbootstrap.com/docs/4.1/components/"
+          target="_blank"
+        >
           View documentation
-      </a>
+        </a>
 
-      <ul class="e-toc__items">
-        @@loop('toc.html', '/bootstrap-4-components/data.json')
-      </ul>
+        <ul class="e-toc__items">
+          @@loop('toc.html', '/bootstrap-4-components/data.json')
+        </ul>
+      </div>
     </div>
-  </div>
 
-  @@include('./../../partials/footer/footer.html')
-  @@include('./../../partials/scripts.html')
-</body>
+    @@include('./../../partials/footer/footer.html')
+    @@include('./../../partials/scripts.html')
+  </body>
 </html>
-

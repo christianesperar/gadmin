@@ -68,10 +68,10 @@
   };
 
   /**
-  * Collapse and mobile
-  * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
-  * are both triggered on mobile
-  */
+   * Collapse and mobile
+   * Store current event to `bubbling` to fix issue where `mouseenter` and `click`
+   * are both triggered on mobile
+   */
   var bubbling = void 0;
 
   /**

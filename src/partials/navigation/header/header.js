@@ -1,4 +1,4 @@
-(($) => {
+($ => {
   const $CONTAINER = $('.g-container');
   const $SIDEBAR = $('.g-sidebar');
   const $SIDEBAR_TOGGLE = $('.g-header__sidebar-toggle');
