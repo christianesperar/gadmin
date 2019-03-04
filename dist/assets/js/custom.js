@@ -22,7 +22,7 @@
     isTouchScreen: 'ontouchstart' in document.documentElement,
 
     isCurrentUrl: function isCurrentUrl(href) {
-      return href === CURRENT_URL || CURRENT_URL.indexOf(href + 'index') > -1 || href.indexOf(CURRENT_URL + 'index') > -1;
+      return href && (href === CURRENT_URL || href + '/' === CURRENT_URL || CURRENT_URL.indexOf(href + 'index') > -1 || href.indexOf(CURRENT_URL + 'index') > -1);
     }
   };
 })(jQuery);

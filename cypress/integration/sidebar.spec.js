@@ -1,16 +1,25 @@
 describe('Sidebar', () => {
-  beforeEach(() => {
+  it('should have active state for url with index.html', () => {
     cy.visit('http://127.0.0.1:8080/index.html');
-  });
 
-  it('should have active state', () => {
     cy.get('.g-sidebar__menu-item:contains(Dashboard)').should(
       'have.class',
       'g-sidebar__menu-item--selected'
     );
   });
 
+  it('should have active state for url with /', () => {
+    cy.visit('http://127.0.0.1:8080/bootstrap-4-components/');
+
+    cy.get('.g-sidebar__menu-item:contains(Components)').should(
+      'have.class',
+      'g-sidebar__menu-item--selected'
+    );
+  });
+
   it('should be collapsible', () => {
+    cy.visit('http://127.0.0.1:8080/index.html');
+
     cy.get('.g-header__sidebar-toggle').click();
 
     cy.get('.g-sidebar').should('have.class', 'g-sidebar--collapse');
@@ -21,7 +30,7 @@ describe('Sidebar', () => {
   });
 });
 
-describe('Sidebar Expand', () => {
+describe('Sidebar expand', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:8080/index.html');
   });
@@ -46,12 +55,22 @@ describe('Sidebar Expand', () => {
       .should('be.visible');
   });
 
+  it('menu item should only have one active', () => {
+    cy.get('.g-sidebar__menu-item:contains(Multilevel Menu)')
+      .click()
+      .get('.g-sidebar__menu-item:contains(Pages)')
+      .click()
+      .get('.g-sidebar__menu-item--active')
+      .its('length')
+      .should('be.equal', 2);
+  });
+
   it('should have sidebar footer', () => {
     cy.get('.g-sidebar__footer').should('be.visible');
   });
 });
 
-describe('Sidebar Collapse', () => {
+describe('Sidebar collapse', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:8080/index.html');
 
