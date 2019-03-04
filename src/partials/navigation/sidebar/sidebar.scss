@@ -1,5 +1,5 @@
-@import "../../../assets/scss/variables.scss";
-@import "../../../assets/scss/mixins.scss";
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/mixins.scss';
 
 .g-sidebar {
   position: absolute;
@@ -89,11 +89,11 @@
         right: 15px;
         color: #c4cfda;
         font-size: 10px;
-        @include font-awesome("\f078");
+        @include font-awesome('\f078');
       }
 
       &--active.g-sidebar__menu-item--arrow::after {
-        content: "\f077";
+        content: '\f077';
       }
     }
 

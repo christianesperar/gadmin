@@ -1,13 +1,16 @@
 {
   "plugins": [
-    "cypress"
+    "cypress",
+    "prettier"
   ],
   "extends": [
     "airbnb",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "prettier"
   ],
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "prettier/prettier": ["error"]
   },
   "env": {
     "browser": true,

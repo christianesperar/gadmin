@@ -1,35 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  @@include('./../partials/head.html')
 
-@@include('./../partials/head.html')
+  <body class="g-footer--fixed">
+    @@include('./../partials/navigation/navigation.html')
 
-<body class="g-footer--fixed">
-  @@include('./../partials/navigation/navigation.html')
-
-  <div class="g-container">
-    <main class="g-main container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <h1>Fixed footer <span class="g-main__subtitle">never miss out your footer again!</span></h1>
+    <div class="g-container">
+      <main class="g-main container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h1>
+              Fixed footer
+              <span class="g-main__subtitle"
+                >never miss out your footer again!</span
+              >
+            </h1>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <section class="g-section" style="height: 2400px;">
-            <div class="g-section__header">
-              <h2 class="g-section__title">How to use</h2>
-            </div>
+        <div class="row">
+          <div class="col-12">
+            <section class="g-section" style="height: 2400px;">
+              <div class="g-section__header">
+                <h2 class="g-section__title">How to use</h2>
+              </div>
 
-            <div class="g-section__content">
-              Add class <strong>g-footer--fixed</strong> into the <strong>body tag</strong> of your page.
-            </div>
-          </section>
+              <div class="g-section__content">
+                Add class <strong>g-footer--fixed</strong> into the
+                <strong>body tag</strong> of your page.
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
 
-  @@include('./../partials/footer/footer.html')
-  @@include('./../partials/scripts.html')
-</body>
+    @@include('./../partials/footer/footer.html')
+    @@include('./../partials/scripts.html')
+  </body>
 </html>
