@@ -7,10 +7,10 @@ cache:
     - ~/.cache
 install:
   - npm install gulp-cli -g
-  - npm install http-server -g
+  - npm install serve -g
   - npm ci
 before_script:
-  - gulp ci && http-server ./dist -a localhost -p 8080 -s &
+  - gulp ci && serve ./dist -a localhost -p 8080 -s &
 script:
   - $(npm bin)/cypress run --record --key 30c89f7e-1be3-4b67-a907-a93a1c774e05
   
