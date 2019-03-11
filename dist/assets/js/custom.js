@@ -21,8 +21,15 @@
 
     isTouchScreen: 'ontouchstart' in document.documentElement,
 
+    trimUrl: function trimUrl(href) {
+      return href.replace('.html', '').replace('index', '').replace(/\/$/, '');
+    },
+
     isCurrentUrl: function isCurrentUrl(href) {
-      return href && (href === CURRENT_URL || href + '/' === CURRENT_URL || CURRENT_URL.indexOf(href + 'index') > -1 || href.indexOf(CURRENT_URL + 'index') > -1);
+      var trimHref = window.GadminHelper.trimUrl(href);
+      var trimCurrentUrl = window.GadminHelper.trimUrl(CURRENT_URL);
+
+      return trimHref === trimCurrentUrl;
     }
   };
 })(jQuery);

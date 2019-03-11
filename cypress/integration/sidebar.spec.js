@@ -17,6 +17,15 @@ describe('Sidebar', () => {
     );
   });
 
+  it('should have active state for second level menu', () => {
+    cy.visit('http://127.0.0.1:8080/layout-fixed-navigation.html');
+
+    cy.get('.g-sidebar__menu-item:contains(Fixed navigation)').should(
+      'have.class',
+      'g-sidebar__menu-item--selected'
+    );
+  });
+
   it('should be collapsible', () => {
     cy.visit('http://127.0.0.1:8080/index.html');
 

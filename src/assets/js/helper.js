@@ -14,11 +14,17 @@
 
     isTouchScreen: 'ontouchstart' in document.documentElement,
 
-    isCurrentUrl: href =>
-      href &&
-      (href === CURRENT_URL ||
-        `${href}/` === CURRENT_URL ||
-        CURRENT_URL.indexOf(`${href}index`) > -1 ||
-        href.indexOf(`${CURRENT_URL}index`) > -1)
+    trimUrl: href =>
+      href
+        .replace('.html', '')
+        .replace('index', '')
+        .replace(/\/$/, ''),
+
+    isCurrentUrl: href => {
+      const trimHref = window.GadminHelper.trimUrl(href);
+      const trimCurrentUrl = window.GadminHelper.trimUrl(CURRENT_URL);
+
+      return trimHref === trimCurrentUrl;
+    }
   };
 })(jQuery);
