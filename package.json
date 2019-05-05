@@ -27,6 +27,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "merge-stream": "^1.0.1",
+    "serve-handler": "^6.0.0",
     "stylelint": "^9.4.0",
     "stylelint-config-rational-order": "0.0.2",
     "stylelint-config-standard": "^18.2.0"
@@ -34,7 +35,7 @@
   "scripts": {
     "start": "serve ./dist -p ${PORT:=8080}",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "cypress:open": "npm start & cypress open"
   },
   "keywords": [
     "admin-dashboard",

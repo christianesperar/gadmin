@@ -3,3 +3,4 @@ node_modules
 .sass-cache
 cypress/videos
 cypress/screenshots
+dev

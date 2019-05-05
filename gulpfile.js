@@ -8,19 +8,27 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const prettier = require('gulp-prettier');
+const handler = require('serve-handler');
+const http = require('http');
 
-gulp.task('build', () =>
+const buildHTML = (env, directory) =>
   gulp
     .src(['src/pages/*.html', 'src/pages/**/index.html'])
     .pipe(
       fileInclude({
         prefix: '@@',
-        basepath: '@file'
+        basepath: '@file',
+        context: {
+          env
+        }
       })
     )
     .pipe(prettier())
-    .pipe(gulp.dest('dist'))
-);
+    .pipe(gulp.dest(directory));
+
+gulp.task('build', () => {
+  return merge(buildHTML('production', 'dist'), buildHTML('development', 'dev'));
+});
 
 const compileSASS = (directories, filename, outputStyle = 'nested') =>
   gulp
@@ -29,7 +37,8 @@ const compileSASS = (directories, filename, outputStyle = 'nested') =>
     .pipe(autoprefixer('last 2 versions', '> 5%'))
     .pipe(sass({ outputStyle }))
     .pipe(concat(filename))
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(gulp.dest('dev/assets/css'));
 
 gulp.task('sass', () => {
   const path = {
@@ -62,6 +71,7 @@ gulp.task('scripts', () =>
     )
     .pipe(concat('custom.js'))
     .pipe(gulp.dest('dist/assets/js'))
+    .pipe(gulp.dest('dev/assets/js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest('dist/assets/js'))
@@ -73,6 +83,18 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.js', gulp.series('scripts'));
 });
 
+gulp.task('serve', () => {
+  const server = http.createServer((request, response) => {
+    return handler(request, response, {
+      public: 'dev'
+    });
+  });
+
+  server.listen(8080, () => {
+    console.log('Running at http://localhost:8080');
+  });
+});
+
 gulp.task('ci', gulp.parallel('build', 'sass', 'scripts'));
 
-gulp.task('default', gulp.parallel('build', 'sass', 'scripts', 'watch'));
+gulp.task('default', gulp.parallel('build', 'sass', 'scripts', 'serve', 'watch'));
