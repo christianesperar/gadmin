@@ -28,7 +28,7 @@
     "gulp-uglify": "^3.0.0",
     "merge-stream": "^1.0.1",
     "stylelint": "^9.4.0",
-    "stylelint-config-rational-order": "0.0.2",
+    "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
