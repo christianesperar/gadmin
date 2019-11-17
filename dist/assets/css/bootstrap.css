@@ -83,6 +83,7 @@ abbr[data-original-title] {
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
+  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none; }
 
 address {
@@ -1656,6 +1657,14 @@ pre code {
   box-shadow: 0 0 0 0.2rem rgba(51, 122, 183, 0.25); }
 
 .form-control::-webkit-input-placeholder {
+  color: #6c757d;
+  opacity: 1; }
+
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1; }
+
+.form-control:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1; }
 
@@ -3459,16 +3468,14 @@ input[type="button"].btn-block {
   background-color: #337ab7;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -moz-appearance: none;
   appearance: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .custom-range::-moz-range-thumb {
-    -webkit-transition: none;
+    -moz-transition: none;
     transition: none; } }
 
 .custom-range::-moz-range-thumb:active {
@@ -3492,15 +3499,13 @@ input[type="button"].btn-block {
   background-color: #337ab7;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   appearance: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .custom-range::-ms-thumb {
-    -webkit-transition: none;
+    -ms-transition: none;
     transition: none; } }
 
 .custom-range::-ms-thumb:active {
@@ -4186,8 +4191,10 @@ input[type="button"].btn-block {
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
     -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     orphans: 1;
     widows: 1; }

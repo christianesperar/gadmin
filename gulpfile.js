@@ -66,7 +66,7 @@ gulp.task('scripts', () =>
     .src('src/**/*.js')
     .pipe(
       babel({
-        presets: ['es2015']
+        presets: ['@babel/preset-env']
       })
     )
     .pipe(concat('custom.js'))

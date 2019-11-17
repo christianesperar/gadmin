@@ -189,142 +189,6 @@ a:hover {
 .g-navigation--fixed .g-container {
   margin-top: 42px; }
 
-.g-header {
-  position: relative;
-  z-index: 1000;
-  height: 42px;
-  background: #ededed;
-  border-bottom: 1px solid #d9dee4; }
-
-.g-header__title {
-  display: block;
-  float: left;
-  width: 50px;
-  height: 42px;
-  color: #fff;
-  font-size: 2rem;
-  background: #2a3f54; }
-
-@media (min-width: 768px) {
-  .g-header__title {
-    width: 230px; } }
-
-.g-header__title:hover {
-  color: #fff; }
-
-.g-header__site-name {
-  display: none; }
-
-@media (min-width: 768px) {
-  .g-header__site-name {
-    display: inline-block; } }
-
-.g-header__sidebar-toggle {
-  margin: 0 15px;
-  color: #5a738e;
-  font-size: 2rem; }
-
-.g-header__nav-item {
-  height: 100%; }
-
-.g-header__nav-link {
-  height: 100%; }
-
-.g-header__nav-link:hover, .g-header__nav-link[aria-expanded='true'] {
-  color: #23527c !important;
-  background: #d9dee4; }
-
-.g-header__nav-link::after {
-  display: none; }
-
-.g-header__icon {
-  position: relative;
-  font-size: 15px; }
-
-.g-header__icon--caret {
-  font-size: 18px;
-  line-height: 19px; }
-
-.g-header__alert {
-  position: absolute;
-  top: -12px;
-  right: -10px;
-  padding: 2px 6px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 10px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 13px; }
-
-.g-header__profile-photo {
-  width: 29px;
-  margin-right: 10px; }
-
-.g-header__dropdown-arrow {
-  margin-left: 5px;
-  font-size: 10px;
-  line-height: 11px; }
-
-.g-notification {
-  top: 1px !important;
-  width: 180px;
-  margin-top: 0;
-  padding: 0;
-  overflow: hidden;
-  border-top: 0;
-  border-radius: 0 0 0.25em 0.25em; }
-
-.g-notification__item {
-  padding: 10px; }
-
-.g-notification--messages {
-  width: 280px; }
-
-.g-notification--messages .g-notification__items {
-  max-height: 200px;
-  overflow: auto; }
-
-.g-notification--messages .g-notification__item {
-  position: relative;
-  border-bottom: 1px solid #e9ecef; }
-
-.g-notification--messages .g-notification__item:last-child {
-  border-bottom: 0; }
-
-.g-notification--messages .g-notification__item--toolbar {
-  padding: 7px 10px;
-  border-top: 1px solid #e9ecef;
-  border-bottom: 0; }
-
-.g-notification--messages .g-notification__time {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #90949c;
-  font-size: 80%; }
-
-.g-notification__image {
-  width: 40px;
-  margin-right: 10px; }
-
-.g-notification__title {
-  display: block;
-  max-width: 145px;
-  overflow: hidden;
-  font-weight: 500;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
-.g-notification__message {
-  display: block;
-  max-width: 208px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
-.g-notification__divider {
-  margin: 0; }
-
 @charset "UTF-8";
 .g-sidebar {
   position: absolute;
@@ -562,6 +426,142 @@ a:hover {
 .g-sidebar--collapse .g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item--selected.g-sidebar__menu-item--toggle .g-sidebar__menu-description,
 .g-sidebar--collapse .g-sidebar__menu > .g-sidebar__menu-list > .g-sidebar__menu-item--selected.g-sidebar__menu-item--toggle > .g-sidebar__menu-list {
   left: 45px; }
+
+.g-header {
+  position: relative;
+  z-index: 1000;
+  height: 42px;
+  background: #ededed;
+  border-bottom: 1px solid #d9dee4; }
+
+.g-header__title {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 42px;
+  color: #fff;
+  font-size: 2rem;
+  background: #2a3f54; }
+
+@media (min-width: 768px) {
+  .g-header__title {
+    width: 230px; } }
+
+.g-header__title:hover {
+  color: #fff; }
+
+.g-header__site-name {
+  display: none; }
+
+@media (min-width: 768px) {
+  .g-header__site-name {
+    display: inline-block; } }
+
+.g-header__sidebar-toggle {
+  margin: 0 15px;
+  color: #5a738e;
+  font-size: 2rem; }
+
+.g-header__nav-item {
+  height: 100%; }
+
+.g-header__nav-link {
+  height: 100%; }
+
+.g-header__nav-link:hover, .g-header__nav-link[aria-expanded='true'] {
+  color: #23527c !important;
+  background: #d9dee4; }
+
+.g-header__nav-link::after {
+  display: none; }
+
+.g-header__icon {
+  position: relative;
+  font-size: 15px; }
+
+.g-header__icon--caret {
+  font-size: 18px;
+  line-height: 19px; }
+
+.g-header__alert {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  padding: 2px 6px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 10px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 13px; }
+
+.g-header__profile-photo {
+  width: 29px;
+  margin-right: 10px; }
+
+.g-header__dropdown-arrow {
+  margin-left: 5px;
+  font-size: 10px;
+  line-height: 11px; }
+
+.g-notification {
+  top: 1px !important;
+  width: 180px;
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
+  border-top: 0;
+  border-radius: 0 0 0.25em 0.25em; }
+
+.g-notification__item {
+  padding: 10px; }
+
+.g-notification--messages {
+  width: 280px; }
+
+.g-notification--messages .g-notification__items {
+  max-height: 200px;
+  overflow: auto; }
+
+.g-notification--messages .g-notification__item {
+  position: relative;
+  border-bottom: 1px solid #e9ecef; }
+
+.g-notification--messages .g-notification__item:last-child {
+  border-bottom: 0; }
+
+.g-notification--messages .g-notification__item--toolbar {
+  padding: 7px 10px;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 0; }
+
+.g-notification--messages .g-notification__time {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #90949c;
+  font-size: 80%; }
+
+.g-notification__image {
+  width: 40px;
+  margin-right: 10px; }
+
+.g-notification__title {
+  display: block;
+  max-width: 145px;
+  overflow: hidden;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.g-notification__message {
+  display: block;
+  max-width: 208px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.g-notification__divider {
+  margin: 0; }
 
 .jvectormap--zoom-bottom .jvectormap-zoomin {
   top: inherit;
